@@ -3,8 +3,6 @@ dist: focal
 language: python
 cache: pip
 arch:
-  - s390x
-  - ppc64le
   - arm64
 
 python:
@@ -24,4 +22,7 @@ install:
     - pip install -r requirements-selftests.txt
 
 script:
-    - make check
+    - python3 setup.py lint
+    - python3 setup.py develop --user
+    - python3 selftests/check.py --disable-static-checks --disable-selftests-functional
+    - python3 selftests/check.py --disable-static-checks --disable-selftests-jobs --disable-selftests-unit

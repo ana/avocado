@@ -199,6 +199,16 @@ def parse_args():
     parser.add_argument('--disable-plugin-checks',
                         help='Disable checks for a plugin (by directory name)',
                         action='append', default=[])
+    parser.add_argument('--disable-selftests-unit',
+                        help='Disable selftests/unit/',
+                        action='store_true')
+    parser.add_argument('--disable-selftests-jobs',
+                        help='Disable selftests/jobs/',
+                        action='store_true')
+    parser.add_argument('--disable-selftests-functional',
+                        help='Disable selftests/functional/',
+                        action='store_true')
+
     return parser.parse_args()
 
 
@@ -508,11 +518,18 @@ def create_suites(args):
     # ========================================================================
     # Run all static checks, unit and functional tests
     # ========================================================================
+
+    selftests = []
+    if not args.disable_selftests_unit:
+        selftests.append('selftests/unit/')
+    if not args.disable_selftests_jobs:
+        selftests.append('selftests/jobs/')
+    if not args.disable_selftests_functional:
+        selftests.append('selftests/functional/')
+
     status_server = '127.0.0.1:%u' % find_free_port()
     config_check = {
-        'run.references': ['selftests/jobs/',
-                           'selftests/unit/',
-                           'selftests/functional/'],
+        'run.references': selftests,
         'run.test_runner': 'nrunner',
         'nrunner.status_server_listen': status_server,
         'nrunner.status_server_uri': status_server,
