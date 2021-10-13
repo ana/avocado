@@ -304,8 +304,7 @@ class DebianImageProvider(ImageProviderBase):
 
     name = 'Debian'
 
-    def __init__(self, version='[0-9]+.[0-9]+.[0-9]+.*', build=None,
-                 arch=DEFAULT_ARCH):
+    def __init__(self, version='[a-z]+', build='[0-9]+', arch=DEFAULT_ARCH):
         # Debian uses 'amd64' instead of 'x86_64'
         if arch == 'x86_64':
             arch = 'amd64'
@@ -314,9 +313,10 @@ class DebianImageProvider(ImageProviderBase):
             arch = 'arm64'
 
         super(DebianImageProvider, self).__init__(version, build, arch)
-        self.url_versions = 'https://cdimage.debian.org/cdimage/openstack/'
-        self.url_images = self.url_versions + '{version}/'
-        self.image_pattern = 'debian-(?P<version>{version})-openstack-(?P<arch>{arch}).qcow2$'
+        # Debian likes codenames
+        self.url_versions = 'https://cloud.debian.org/images/cloud/'
+        self.url_images = self.url_versions + '{version}/latest/'
+        self.image_pattern = 'debian-(?P<build>{build})-generic-(?P<arch>{arch}).qcow2$'
 
 
 class JeosImageProvider(ImageProviderBase):
