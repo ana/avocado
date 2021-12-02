@@ -4,8 +4,6 @@ language: python
 cache: pip
 arch:
   - s390x
-  - ppc64le
-  - arm64
 
 python:
     - "3.9"
@@ -15,4 +13,4 @@ install:
     - python3 setup.py develop --user
 
 script:
-    - python3 selftests/check.py --skip static-checks
+    - python3 selftests/check.py --select unit
