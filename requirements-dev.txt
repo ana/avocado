@@ -9,6 +9,9 @@ autopep8==1.5.7
 
 coverage==5.5
 
+# avocado utils
+git+https://github.com/ana/afutils@master
+
 # To run make check
 aexpect==1.6.1
 psutil==5.8.0

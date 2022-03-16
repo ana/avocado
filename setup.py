@@ -424,4 +424,7 @@ if __name__ == '__main__':
                     'man': Man,
                     'plugin': Plugin,
                     'test': Test},
-          install_requires=['setuptools'])
+          install_requires=['setuptools',
+                            'afutils==0.0.1'],
+          dependency_links=['https://github.com/ana/afutils/archive/refs/tags/0.0.1.zip#egg=afutils-0.0.1'],
+          )
