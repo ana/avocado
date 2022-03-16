@@ -1,5 +1,5 @@
 """
-avocado.utils.lv_utils selftests
+afutils.lv_utils selftests
 :author: Lukas Doktor <ldoktor@redhat.com>
 :copyright: 2016 Red Hat, Inc
 """
@@ -10,7 +10,8 @@ import sys
 import time
 import unittest
 
-from avocado.utils import linux_modules, lv_utils, process
+from afutils import linux_modules, lv_utils, process
+
 from selftests.utils import TestCaseTmpDir
 
 

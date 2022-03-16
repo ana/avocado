@@ -12,14 +12,14 @@
 # Copyright: 2016 Red Hat, Inc.
 # Author: Lukas Doktor <ldoktor@redhat.com>
 """
-avocado.utils.stacktrace unittests
+afutils.stacktrace unittests
 """
 
 import pickle
 import re
 import unittest
 
-from avocado.utils import stacktrace
+from afutils import stacktrace
 
 
 class Unpickable:
@@ -53,7 +53,7 @@ class ListWithUnpickableAttribute(list):
 class TestUnpickableObject(unittest.TestCase):
 
     """
-    Basic selftests for `avocado.utils.stacktrace.str_unpickable_object
+    Basic selftests for `afutils.stacktrace.str_unpickable_object
     """
 
     def test_raises(self):

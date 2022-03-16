@@ -34,12 +34,12 @@ Users/Test Writers
   version, run ``avocado-3`` (or ``avocado-3.x``, which x is the minor
   Python version) instead of ``avocado``.
 
-* The :mod:`avocado.utils.kernel` library now supports setting the URL
+* The :mod:`afutils.kernel` library now supports setting the URL
   that will be used to fetch the Linux kernel from, and can also build
   installable packages on supported distributions (such as ``.deb``
   packages on Ubuntu).
 
-* The :mod:`avocado.utils.process` library now contains helper
+* The :mod:`afutils.process` library now contains helper
   functions similar to the Python 2 :func:`commands.getstatusoutput`
   and :func:`commands.getoutput` which can be of help to people porting
   code from Python 2 to Python 3.
@@ -53,7 +53,7 @@ Bug Fixes
 * On some situations, Avocado would, internally, attempt to operate on
   a closed file, resulting in ``ValueError: I/O operation on closed
   file``.  This has been fixed in the
-  :class:`avocado.utils.process.FDDrainer` class, which will not only
+  :class:`afutils.process.FDDrainer` class, which will not only
   check if the file is not closed, but if the file-like object is
   capable of operations such as ``fsync()``.
 
@@ -82,8 +82,8 @@ Internal Changes
   cleaned up after the job finishes.
 
 * The exception raised by the utility functions in
-  :mod:`avocado.utils.memory` has been renamed from ``MemoryError``
-  and became :class:`avocado.utils.memory.MemError`.  The reason is
+  :mod:`afutils.memory` has been renamed from ``MemoryError``
+  and became :class:`afutils.memory.MemError`.  The reason is
   that ``MemoryError`` is a Python standard exception, that is
   intended to be used on different situations.
 

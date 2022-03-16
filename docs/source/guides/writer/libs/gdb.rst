@@ -1,7 +1,7 @@
-avocado.utils.gdb
+afutils.gdb
 =================
 
-The :mod:`avocado.utils.gdb` APIs that allows a test to interact with
+The :mod:`afutils.gdb` APIs that allows a test to interact with
 GDB, including setting a executable to be run, setting breakpoints
 or any other types of commands. This requires a test written with
 that approach and API in mind.
@@ -19,7 +19,7 @@ Avocado's GDB module, provides three main classes that lets a test writer
 interact with a `gdb` process, a `gdbserver` process and also use the GDB
 remote protocol for interaction with a remote target.
 
-Please refer to :mod:`avocado.utils.gdb` for more information.
+Please refer to :mod:`afutils.gdb` for more information.
 
 Example
 ~~~~~~~

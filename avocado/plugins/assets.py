@@ -20,16 +20,17 @@ import ast
 import os
 from datetime import datetime
 
+from afutils import data_structures
+from afutils.asset import SUPPORTED_OPERATORS, Asset
+from afutils.astring import iter_tabular_output
+from afutils.data_structures import DataSize, InvalidDataSize
+from afutils.output import display_data_size
+
 from avocado.core import exit_codes, safeloader
 from avocado.core.nrunner import Runnable
 from avocado.core.output import LOG_UI
 from avocado.core.plugin_interfaces import CLICmd, JobPreTests
 from avocado.core.settings import settings
-from avocado.utils import data_structures
-from avocado.utils.asset import SUPPORTED_OPERATORS, Asset
-from avocado.utils.astring import iter_tabular_output
-from avocado.utils.data_structures import DataSize, InvalidDataSize
-from avocado.utils.output import display_data_size
 
 
 class FetchAssetHandler(ast.NodeVisitor):  # pylint: disable=R0902

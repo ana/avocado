@@ -1,8 +1,9 @@
 import os
 import sys
 
+from afutils import genio
+
 from avocado import Test
-from avocado.utils import genio
 
 
 class Env(Test):

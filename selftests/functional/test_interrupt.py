@@ -6,8 +6,8 @@ import time
 import unittest
 
 import psutil
+from afutils import data_factory, process, script, wait
 
-from avocado.utils import data_factory, process, script, wait
 from selftests.utils import (AVOCADO, BASEDIR, TestCaseTmpDir,
                              skipOnLevelsInferiorThan)
 

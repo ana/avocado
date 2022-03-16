@@ -14,25 +14,25 @@ roughly categorized into major topics and intended audience:
 Users/Test Writers
 ==================
 
-* The :mod:`avocado.utils.archive` module now supports the handling
+* The :mod:`afutils.archive` module now supports the handling
   of gzip files that are not compressed tarballs.
 
 * The xunit output now names the job after the Avocado job results
   directory.  This should make the correlation of results displayed in
   UIs such as Jenkins and the complete Avocado results much easier.
 
-* A number of improvements to the :mod:`avocado.utils.lv_utils` module
+* A number of improvements to the :mod:`afutils.lv_utils` module
   now allows users to choose if they want or not to use ramdisks, and
   allows for a more concise experience when creating Thin Provisioning
   LVs.
 
-* New utility function in the :mod:`avocado.utils.genio` that
+* New utility function in the :mod:`afutils.genio` that
   allows for easy matching of patterns in files.  See
-  :func:`avocado.utils.is_pattern_in_file` for more information.
+  :func:`afutils.is_pattern_in_file` for more information.
 
 * New utility functions are available to deal with filesystems, such
-  as :func:`avocado.utils.disk.get_available_filesystems` and
-  :func:`avocado.utils.disk.get_filesystem_type`.
+  as :func:`afutils.disk.get_available_filesystems` and
+  :func:`afutils.disk.get_filesystem_type`.
 
 * The test filtering mechanism using tags now support "key:val"
   assignments for further categorization.  See :ref:`tags_keyval` for
@@ -43,11 +43,11 @@ Users/Test Writers
   test may use that information, for instance, to decide on default
   behavior.
 
-* The :func:`avocado.utils.process.kill_process_tree` now supports
+* The :func:`afutils.process.kill_process_tree` now supports
   waiting a given timeout, and returns the PIDs of all process that
   had signals delivered to.
 
-* The :func:`avocado.utils.network.is_port_free` utility function now
+* The :func:`afutils.network.is_port_free` utility function now
   supports IPv6 in addition to IPv4, as well as UDP in addition to TCP.
 
 Bug Fixes

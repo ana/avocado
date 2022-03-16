@@ -2,8 +2,9 @@ import json
 import os
 import unittest
 
+from afutils import process, script
+
 from avocado.core import exit_codes
-from avocado.utils import process, script
 from selftests.utils import AVOCADO, TestCaseTmpDir
 
 STDOUT = b"Hello, \xc4\x9b\xc5\xa1\xc4\x8d\xc5\x99\xc5\xbe\xc3\xbd\xc3\xa1\xc3\xad\xc3\xa9!\n"

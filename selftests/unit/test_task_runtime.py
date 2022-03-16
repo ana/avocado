@@ -1,10 +1,11 @@
 import os
 from unittest import TestCase
 
+from afutils import script
+
 from avocado.core.nrunner import Runnable, Task
 from avocado.core.suite import TestSuite
 from avocado.core.task.runtime import RuntimeTask, RuntimeTaskGraph
-from avocado.utils import script
 from selftests.utils import TestCaseTmpDir
 
 SINGLE_REQUIREMENT = '''from avocado import Test

@@ -14,11 +14,11 @@ roughly categorized into major topics and intended audience:
 Users/Test Writers
 ==================
 
-* The :mod:`avocado.utils.vmimage` library got a provider implementation
+* The :mod:`afutils.vmimage` library got a provider implementation
   for OpenSUSE.  The limitation is that it tracks the general releases,
   and not the rolling releases (called Tumbleweed).
 
-* Users of the :mod:`avocado.utils.kernel` module can now properly specify
+* Users of the :mod:`afutils.kernel` module can now properly specify
   the base URL from which to download the kernel sources.
 
 Bug Fixes
@@ -38,8 +38,8 @@ Internal Changes
   system.  You can force the Python interpreter version with ``make
   PYTHON=/path/to/python develop``.
 
-* The :mod:`avocado.utils.partition` implementation for the
-  ``/etc/mtab`` lock is now based on the :mod:`avocado.utils.filelock`
+* The :mod:`afutils.partition` implementation for the
+  ``/etc/mtab`` lock is now based on the :mod:`afutils.filelock`
   module.
 
 For more information, please check out the complete

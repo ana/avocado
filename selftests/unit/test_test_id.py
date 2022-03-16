@@ -1,7 +1,8 @@
 import unittest
 
+from afutils import astring
+
 from avocado.core.test_id import TestID
-from avocado.utils import astring
 
 
 class Test(unittest.TestCase):

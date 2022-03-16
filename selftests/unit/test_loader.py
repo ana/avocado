@@ -3,8 +3,9 @@ import stat
 import tempfile
 import unittest.mock
 
+from afutils import script
+
 from avocado.core import loader
-from avocado.utils import script
 from selftests.utils import setup_avocado_loggers, temp_dir_prefix
 
 setup_avocado_loggers()

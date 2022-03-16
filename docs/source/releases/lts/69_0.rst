@@ -145,7 +145,7 @@ Porting Tests (Utility API compatibility)
 -----------------------------------------
 
 The changes in the utility APIs (those that live under the
-``avocado.utils`` namespace are too many to present porting
+``afutils`` namespace are too many to present porting
 suggestion.  Please refer to the :ref:`lts_069_utility_api_changes`
 section for a comprehensive list of changes, including new features
 your test may be able to leverage.
@@ -169,7 +169,7 @@ Test APIs
 * Test writers will get better protection against mistakes when trying
   to overwrite :class:`avocado.core.test.Test` "properties".  Some of
   those were previously implemented using
-  :func:`avocado.utils.data_structures.LazyProperty` which did not
+  :func:`afutils.data_structures.LazyProperty` which did not
   prevent test writers from overwriting them.
 
 * The ``avocado.Test.default_parameters`` mechanism for setting
@@ -235,45 +235,45 @@ Test APIs
 Utility APIs
 ~~~~~~~~~~~~
 
-* The :mod:`avocado.utils.archive` module now supports the handling
+* The :mod:`afutils.archive` module now supports the handling
   of gzip files that are not compressed tarballs.
 
-* :data:`avocado.utils.astring.ENCODING` is a new addition, and holds
+* :data:`afutils.astring.ENCODING` is a new addition, and holds
   the encoding used on many other Avocado utilities.  If your test
   needs to convert between binary data and text, we recommend you use
   it as the default encoding (unless your test knows better).
 
-* :func:`avocado.utils.astring.to_text` now supports setting the error
+* :func:`afutils.astring.to_text` now supports setting the error
   handler.  This means that when a perfect decoding is not possible,
   users can choose how to handle it, like, for example, ignoring the
   offending characters.
 
-* The :func:`avocado.utils.astring.tabular_output` will now properly
+* The :func:`afutils.astring.tabular_output` will now properly
   strip trailing whitespace from lines that don't contain data for all
   "columns".  This is also reflected in the (tabular) output of
   commands such as ``avocado list -v``.
 
 * Simple bytes and "unicode strings" utility functions have been added
-  to :mod:`avocado.utils.astring`, and can be used by extension and
+  to :mod:`afutils.astring`, and can be used by extension and
   test writers that need consistent results across Python major
   versions.
 
-* The :func:`avocado.utils.cpu.set_cpuidle_state` function now takes a
+* The :func:`afutils.cpu.set_cpuidle_state` function now takes a
   boolean value for its ``disable`` parameter (while still allowing
   the previous integer (0/1) values to be used).  The goal is to have
   a more Pythonic interface, and to drop support legacy integer (0/1)
   use in the upcoming releases.
 
-* The :mod:`avocado.utils.cpu` functions, such as
-  :func:`avocado.utils.cpu.cpu_oneline_list` now support the S390X
+* The :mod:`afutils.cpu` functions, such as
+  :func:`afutils.cpu.cpu_oneline_list` now support the S390X
   architecture.
 
-* The :mod:`avocado.utils.distro` module has dropped the probe that
+* The :mod:`afutils.distro` module has dropped the probe that
   depended on the Python standard library :func:`platform.dist`.  The
   reason is the :func:`platform.dist` has been deprecated since Python
   2.6, and has been removed on the upcoming Python 3.8.
 
-* The :mod:`avocado.utils.distro` module introduced a probe for the
+* The :mod:`afutils.distro` module introduced a probe for the
   Ubuntu distros.
 
 * The :mod:`avocado.core.utils.vmimage` library now allows users to
@@ -282,28 +282,28 @@ Utility APIs
   easily register your own providers and thus use your images on your
   tests.
 
-* The :mod:`avocado.utils.vmimage` library now contains support for
+* The :mod:`afutils.vmimage` library now contains support for
   Avocado's own JeOS ("Just Enough Operating System") image.  A nice
   addition given the fact that it's the default image used in
   Avocado-VT and the latest version is available in the following
   architectures: x86_64, aarch64, ppc64, ppc64le and s390x.
 
-* The :mod:`avocado.utils.vmimage` library got a provider implementation
+* The :mod:`afutils.vmimage` library got a provider implementation
   for OpenSUSE.  The limitation is that it tracks the general releases,
   and not the rolling releases (called Tumbleweed).
 
-* The :func:`avocado.utils.vmimage.get` function now provides a
+* The :func:`afutils.vmimage.get` function now provides a
   directory in which to put the snapshot file, which is usually
   discarded.  Previously, the snapshot file would always be kept in
   the cache directory, resulting in its pollution.
 
 * The exception raised by the utility functions in
-  :mod:`avocado.utils.memory` has been renamed from ``MemoryError``
-  and became :class:`avocado.utils.memory.MemError`.  The reason is
+  :mod:`afutils.memory` has been renamed from ``MemoryError``
+  and became :class:`afutils.memory.MemError`.  The reason is
   that ``MemoryError`` is a Python standard exception, that is
   intended to be used on different situations.
 
-* When running a process by means of the :mod:`avocado.utils.process`
+* When running a process by means of the :mod:`afutils.process`
   module utilities, the output of such a process is captured and can
   be logged in a ``stdout``/``stderr`` (or combined ``output``) file.
   The logging is now more resilient to decode errors, and will use the
@@ -312,110 +312,110 @@ Utility APIs
   what was actually output by the processes if decoding error
   conditions happen.
 
-* The :mod:`avocado.utils.process` has seen a number of changes
+* The :mod:`afutils.process` has seen a number of changes
   related to how it handles data from the executed processes.  In a
   nutshell, process output (on both ``stdout`` and ``stderr``) is now
   considered binary data.  Users that need to deal with text instead,
   should use the newly added
-  :attr:`avocado.utils.process.CmdResult.stdout_text` and
-  :attr:`avocado.utils.process.CmdResult.stderr_text`, which are
+  :attr:`afutils.process.CmdResult.stdout_text` and
+  :attr:`afutils.process.CmdResult.stderr_text`, which are
   convenience properties that will attempt to decode the ``stdout`` or
   ``stderr`` data into a string-like type using the encoding set, and
   if none is set, falling back to the Python default encoding.  This
   change of behavior was needed to accommodate Python's 2 and Python's
   3 differences in bytes and string-like types and handling.
 
-* The :mod:`avocado.utils.process` library now contains helper
+* The :mod:`afutils.process` library now contains helper
   functions similar to the Python 2 :func:`commands.getstatusoutput`
   and :func:`commands.getoutput` which can be of help to people porting
   code from Python 2 to Python 3.
 
-* New :func:`avocado.utils.process.get_parent_pid` and
-  :func:`avocado.utils.process.get_owner_id` process related functions
+* New :func:`afutils.process.get_parent_pid` and
+  :func:`afutils.process.get_owner_id` process related functions
 
-* The :mod:`avocado.utils.kernel` library now supports setting the URL
+* The :mod:`afutils.kernel` library now supports setting the URL
   that will be used to fetch the Linux kernel from, and can also build
   installable packages on supported distributions (such as ``.deb``
   packages on Ubuntu).
 
-* The :mod:`avocado.utils.iso9660` module gained a pycdlib based
+* The :mod:`afutils.iso9660` module gained a pycdlib based
   backend, which is very capable, and pure Python ISO9660 library.
-  This allows us to have a working :mod:`avocado.utils.iso9660`
+  This allows us to have a working :mod:`afutils.iso9660`
   backend on environments in which other backends may not be easily
   installable.
 
-* The :func:`avocado.utils.iso9660.iso9660` function gained a
+* The :func:`afutils.iso9660.iso9660` function gained a
   capabilities mechanism, in which users may request a backend that
   implement a given set of features.
 
-* The :mod:`avocado.utils.iso9660` module, gained "create" and "write"
+* The :mod:`afutils.iso9660` module, gained "create" and "write"
   capabilities, currently implemented on the pycdlib based backend.
-  This allows users of the :mod:`avocado.utils.iso9660` module to
+  This allows users of the :mod:`afutils.iso9660` module to
   create ISO images programmatically - a task that was previously done
   by running ``mkisofs`` and similar tools.
 
-* The :mod:`avocado.utils.download` module, and the various utility
+* The :mod:`afutils.download` module, and the various utility
   functions that use it, will have extended logging, including the
   file size, time stamp information, etc.
 
-* A brand new module, :mod:`avocado.utils.cloudinit`, that aides in
+* A brand new module, :mod:`afutils.cloudinit`, that aides in
   the creation of ISO files containing configuration for the virtual
   machines compatible with cloudinit.  Besides authentication
   credentials, it's also possible to define a "phone home" address,
   which is complemented by a simple phone home server implementation.
   On top of that, a very easy to use function to wait on the phone
-  home is available as :func:`avocado.utils.cloudinit.wait_for_phone_home`.
+  home is available as :func:`afutils.cloudinit.wait_for_phone_home`.
 
-* A new utility library, :mod:`avocado.utils.ssh`, has been
+* A new utility library, :mod:`afutils.ssh`, has been
   introduced.  It's a simple wrapper around the OpenSSH client
   utilities (your regular ``/usr/bin/ssh``) and allows a
   connection/session to be easily established, and commands to be
   executed on the remote endpoint using that previously established
   connection.
 
-* The :mod:`avocado.utils.cloudinit` module now adds support for
+* The :mod:`afutils.cloudinit` module now adds support for
   instances to be configured to allow ``root`` logins and
   authentication configuration via SSH keys.
 
-* New :func:`avocado.utils.disk.get_disk_blocksize` and
-  :func:`avocado.utils.disk.get_disks` disk related utilities.
+* New :func:`afutils.disk.get_disk_blocksize` and
+  :func:`afutils.disk.get_disks` disk related utilities.
 
 * A new network related utility function,
-  :class:`avocado.utils.network.PortTracker` was ported from
+  :class:`afutils.network.PortTracker` was ported from
   Avocado-Virt, given the perceived general value in a variety of
   tests.
 
-* A new memory utility utility, :class:`avocado.utils.memory.MemInfo`,
-  and its ready to use instance :data:`avocado.utils.memory.meminfo`,
+* A new memory utility utility, :class:`afutils.memory.MemInfo`,
+  and its ready to use instance :data:`afutils.memory.meminfo`,
   allows easy access to most memory related information on Linux
   systems.
 
-* A number of improvements to the :mod:`avocado.utils.lv_utils` module
+* A number of improvements to the :mod:`afutils.lv_utils` module
   now allows users to choose if they want or not to use ramdisks, and
   allows for a more concise experience when creating Thin Provisioning
   LVs.
 
-* New utility function in the :mod:`avocado.utils.genio` that
+* New utility function in the :mod:`afutils.genio` that
   allows for easy matching of patterns in files.  See
-  :func:`avocado.utils.is_pattern_in_file` for more information.
+  :func:`afutils.is_pattern_in_file` for more information.
 
 * New utility functions are available to deal with filesystems, such
-  as :func:`avocado.utils.disk.get_available_filesystems` and
-  :func:`avocado.utils.disk.get_filesystem_type`.
+  as :func:`afutils.disk.get_available_filesystems` and
+  :func:`afutils.disk.get_filesystem_type`.
 
-* The :func:`avocado.utils.process.kill_process_tree` now supports
+* The :func:`afutils.process.kill_process_tree` now supports
   waiting a given timeout, and returns the PIDs of all process that
   had signals delivered to.
 
-* The :func:`avocado.utils.network.is_port_free` utility function now
+* The :func:`afutils.network.is_port_free` utility function now
   supports IPv6 in addition to IPv4, as well as UDP in addition to TCP.
 
-* A new :func:`avocado.utils.cpu.get_pid_cpus` utility function allows
+* A new :func:`afutils.cpu.get_pid_cpus` utility function allows
   one to get all the CPUs being used by a given process and its
   threads.
 
-* The :mod:`avocado.utils.process` module now exposes the ``timeout``
-  parameter to users of the :class:`avocado.utils.process.SubProcess`
+* The :mod:`afutils.process` module now exposes the ``timeout``
+  parameter to users of the :class:`afutils.process.SubProcess`
   class.  It allows users to define a timeout, and the type of signal
   that will be used to attempt to kill the process after the timeout
   is reached.

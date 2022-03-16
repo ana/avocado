@@ -2,7 +2,8 @@ import json
 import os
 import unittest
 
-from avocado.utils import genio, process
+from afutils import genio, process
+
 from selftests.utils import AVOCADO, TestCaseTmpDir
 
 ALL_MESSAGES = ['setup pre',

@@ -1,8 +1,9 @@
 import os
 import shutil
 
+from afutils import build, process
+
 from avocado import Test
-from avocado.utils import build, process
 
 
 class DataDirTest(Test):

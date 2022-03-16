@@ -55,21 +55,21 @@ Bug Fixes
 Utility APIs
 ============
 
-* The :class:`avocado.utils.gdb.GDBRemote` implementation of the GDB
+* The :class:`afutils.gdb.GDBRemote` implementation of the GDB
   Remote Protocol now deals with bytes (instead of possibly multibyte
   strings), more in line with the original protocol specification.
 
-* Users of the :func:`avocado.utils.partition.mount` can now skip
+* Users of the :func:`afutils.partition.mount` can now skip
   checking if the devices/mountpoints are mounted, which is useful
   for bind mounts.
 
-* The :func:`avocado.utils.cpu.online` and
-  :func:`avocado.utils.cpu.offline` will now check the status of the
+* The :func:`afutils.cpu.online` and
+  :func:`afutils.cpu.offline` will now check the status of the
   CPU before attempting to apply a possibly (unnecessary) action.
 
-* The :class:`avocado.utils.software_manager.DnfBackend` now properly
+* The :class:`afutils.software_manager.DnfBackend` now properly
   implements a ``build_dep`` functionality, which differs from its
-  parent :class:`avocado.utils.software_manager.YUMBackend`.
+  parent :class:`afutils.software_manager.YUMBackend`.
 
 Internal Changes
 ================

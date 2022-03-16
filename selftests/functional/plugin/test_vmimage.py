@@ -2,8 +2,9 @@ import json
 import os
 import unittest.mock
 
+from afutils import path, process
+
 from avocado.core import exit_codes
-from avocado.utils import path, process
 from selftests.utils import AVOCADO, get_temporary_config
 
 

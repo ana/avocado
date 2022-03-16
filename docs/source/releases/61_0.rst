@@ -26,7 +26,7 @@ Users/Test Writers
   lines.  For more information, refer to :ref:`test_type_simple_status`.
 
 * Simple bytes and "unicode strings" utility functions have been added
-  to :mod:`avocado.utils.astring`, and can be used by extension and
+  to :mod:`afutils.astring`, and can be used by extension and
   test writers that need consistent results across Python major
   versions.
 
@@ -70,10 +70,10 @@ Internal Changes
 
 * A significant reduction in the default timeout used when waiting for
   hotplug operations on memory devices, as part of the utility module
-  :class:`avocado.utils.memory`.
+  :class:`afutils.memory`.
 
 * Improved support for non-ASCII input, including the internal use of
-  "unicode" string types for :func:`avocado.utils.process.run` and
+  "unicode" string types for :func:`afutils.process.run` and
   similar functions.  The command parameter given to those functions
   are now expected to be "unicode" strings.
 

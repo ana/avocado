@@ -1,5 +1,6 @@
+from afutils import script
+
 from avocado.core.job import Job
-from avocado.utils import script
 from selftests.utils import TestCaseTmpDir, skipUnlessPathExists
 
 SCRIPT_CONTENT = """#!/bin/bash

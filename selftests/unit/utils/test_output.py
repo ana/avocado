@@ -1,6 +1,6 @@
 import unittest
 
-from avocado.utils import output
+from afutils import output
 
 
 class UtilsOutputTest(unittest.TestCase):

@@ -122,25 +122,25 @@ libraries that are important for test writers, some of them are listed
 below:
 
 - ``time_to_seconds``, ``geometric_mean`` and ``compare_matrices`` were
-  added in ``avocado.utils.data_structures``.
-- ``avocado.utils.distro`` was refined.
-- Many ``avocado.utils`` new modules were introduced, like ``filelock``,
+  added in ``afutils.data_structures``.
+- ``afutils.distro`` was refined.
+- Many ``afutils`` new modules were introduced, like ``filelock``,
   ``lv_utils``, ``multipath``, ``partition`` and ``pci``.
-- ``avocado.utils.memory`` contains several new methods.
-- New ``avocado.utils.process.SubProcess.get_pid()`` method.
-- ``sudo`` support in ``avocado.utils.process`` was improved
-- The ``avocado.utils.process`` library makes it possible to ignore
+- ``afutils.memory`` contains several new methods.
+- New ``afutils.process.SubProcess.get_pid()`` method.
+- ``sudo`` support in ``afutils.process`` was improved
+- The ``afutils.process`` library makes it possible to ignore
   spawned background processes.
-- New ``avocado.utils.linux_modules.check_kernel_config()``.
-- Users of the ``avocado.utils.process`` module will now be able to access
-  the process ID in the ``avocado.utils.process.CmdResult``.
-- Improved ``avocado.utils.iso9660`` with a more complete standard API
+- New ``afutils.linux_modules.check_kernel_config()``.
+- Users of the ``afutils.process`` module will now be able to access
+  the process ID in the ``afutils.process.CmdResult``.
+- Improved ``afutils.iso9660`` with a more complete standard API
   across all back-end implementations.
-- Improved ``avocado.utils.build.make()``, which will now return the make
+- Improved ``afutils.build.make()``, which will now return the make
   process exit status code.
 - The ``avocado.Test`` class now better exports (and protects) the core
   class attributes members (such as ``params`` and ``runner_queue``).
-- ``avocado.utils.linux_modules`` functions now returns module name,
+- ``afutils.linux_modules`` functions now returns module name,
   size, submodules if present, filename, version, number of modules
   using it, list of modules it is dependent on and finally a list of
   ``params``.
@@ -327,16 +327,16 @@ Utils API
 
 Focusing only on the changes you might need to adjust the usage of:
 
-* ``avocado.utils.build.make`` calls as it now reports only
+* ``afutils.build.make`` calls as it now reports only
   ``exit_status``. To get the full result object you need to execute
-  ``avocado.utils.build.run_make``.
-* ``avocado.utils.distro`` reports ``Red Hat Enterprise Linux``/``rhel``
+  ``afutils.build.run_make``.
+* ``afutils.distro`` reports ``Red Hat Enterprise Linux``/``rhel``
   instead of ``Red Hat``/``redhat``.
 * ``avocado.process`` where the check for availability of ``sudo`` was
   improved, which might actually start executing some code which used
   to fail in 36.4.
 
-Also check out the :mod:`avocado.utils` for complete list of available
+Also check out the :mod:`afutils` for complete list of available
 utils as there were many additions between 36.4 and 52.0.
 
 Complete list of changes

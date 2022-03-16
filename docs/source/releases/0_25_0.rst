@@ -45,7 +45,7 @@ Changes
 * avocado.core is intended for plugin/core developers. Things are more fluid
   on this space, so that we can move fast with development
 
-* avocado.utils is a generic library, with functions we found out to be
+* afutils is a generic library, with functions we found out to be
   useful for a variety of tests and core code alike.
 
 * avocado has some symbols exposed at its top level, with the test API:

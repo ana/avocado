@@ -2,7 +2,8 @@ import os
 import stat
 import unittest
 
-from avocado.utils import process, script
+from afutils import process, script
+
 # Use the same definitions from loader to make sure the behavior
 # is also the same
 from selftests.functional.test_list import \

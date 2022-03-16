@@ -1,4 +1,4 @@
-from avocado.utils import astring
+from afutils import astring
 
 
 class TestID:

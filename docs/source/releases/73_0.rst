@@ -51,22 +51,22 @@ Bug Fixes
   shell, resulting in more proper captured output, without shell
   related content.
 
-* :func:`avocado.utils.process.SubProcess.send_signal` will now send a
+* :func:`afutils.process.SubProcess.send_signal` will now send a
   signal to itself correctly even when using ``sudo`` mode.
 
 Utility APIs
 ============
 
-* The :mod:`avocado.utils.vmimage` library now allows a user to
+* The :mod:`afutils.vmimage` library now allows a user to
   define the ``qemu-img`` binary that will be used for creating
-  snapshot images via the :data:`avocado.utils.vmimage.QEMU_IMG`
+  snapshot images via the :data:`afutils.vmimage.QEMU_IMG`
   variable.
 
-* The :mod:`avocado.utils.configure_network` module introduced
+* The :mod:`afutils.configure_network` module introduced
   a number of utilities, including MTU configuration support,
   a method for validating network among peers, IPv6 support, etc.
 
-* The :func:`avocado.utils.configure_network.set_ip` function now
+* The :func:`afutils.configure_network.set_ip` function now
   supports different interface types through a ``interface_type``
   parameter, while still defaulting to ``Ethernet``.
 

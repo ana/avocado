@@ -1,8 +1,9 @@
 import os
 import unittest
 
+from afutils import process, script
+
 from avocado.core import exit_codes
-from avocado.utils import process, script
 from selftests.utils import AVOCADO, TestCaseTmpDir, skipOnLevelsInferiorThan
 
 COMMANDS_TIMEOUT_CONF = """

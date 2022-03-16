@@ -90,7 +90,7 @@ Bug Fixes
 Utility APIs
 ============
 
-* :mod:`avocado.utils.ssh` now respects the username set when copying
+* :mod:`afutils.ssh` now respects the username set when copying
   files via ``scp``.
 
 Misc Changes

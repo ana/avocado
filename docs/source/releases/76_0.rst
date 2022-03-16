@@ -22,7 +22,7 @@ Users/Test Writers
   allows the ``avocado nrun`` command to find and execute tests that
   produce ``TAP`` compatible output.
 
-* Avocado's :mod:`avocado.utils.software_manager` functionality is now
+* Avocado's :mod:`afutils.software_manager` functionality is now
   also made available as the ``avocado-software-manager`` command line
   tool.
 
@@ -55,7 +55,7 @@ Bug Fixes
 Utility APIs
 ============
 
-* The :meth:`avocado.utils.kernel.KernelBuild.build` now allows the
+* The :meth:`afutils.kernel.KernelBuild.build` now allows the
   definition of the number of jobs, using semantics very similar to
   the one used by GNU make itself.  That means one should be careful when
   using ``None``, as it means no limit to the number of parallel jobs.
@@ -65,7 +65,7 @@ Internal Changes
 
 * Workarounds on Travis CI for caching failures on s390x and aarch64.
 
-* Many refactors on the :mod:`avocado.utils.asset` module
+* Many refactors on the :mod:`afutils.asset` module
 
 * Multiple refactors on the N(ext) Runner code
 

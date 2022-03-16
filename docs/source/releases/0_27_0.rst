@@ -28,15 +28,15 @@ Changes in avocado:
 
 * The `utils` API received new modules and functions:
 
- - NEW avocado.utils.cpu: APIs related to CPU information on linux boxes [1]
- - NEW avocado.utils.git: APIs to clone/update git repos [2]
- - NEW avocado.utils.iso9660: Get information about ISO files [3]
- - NEW avocado.utils.service: APIs to control services on linux boxes
+ - NEW afutils.cpu: APIs related to CPU information on linux boxes [1]
+ - NEW afutils.git: APIs to clone/update git repos [2]
+ - NEW afutils.iso9660: Get information about ISO files [3]
+ - NEW afutils.service: APIs to control services on linux boxes
    (systemv and systemd) [4]
- - NEW avocado.utils.output: APIs that help avocado based CLI programs to
+ - NEW afutils.output: APIs that help avocado based CLI programs to
    display results to users [5]
- - UPDATE avocado.utils.download: Add url_download_interactive
- - UPDATE avocado.utils.download: Add new params to get_file
+ - UPDATE afutils.download: Add url_download_interactive
+ - UPDATE afutils.download: Add new params to get_file
 
 * Bugfixes. You may refer to [6] for the full list of 64 commits.
 
@@ -55,11 +55,11 @@ See you in a couple of weeks for our next release! Happy testing!
 
 ----
 
-| [1] http://avocado-framework.readthedocs.org/en/latest/api/utils/avocado.utils.html#module-avocado.utils.cpu
-| [2] http://avocado-framework.readthedocs.org/en/latest/api/utils/avocado.utils.html#module-avocado.utils.git
-| [3] http://avocado-framework.readthedocs.org/en/latest/api/utils/avocado.utils.html#module-avocado.utils.iso9660
-| [4] http://avocado-framework.readthedocs.org/en/latest/api/utils/avocado.utils.html#module-avocado.utils.service
-| [5] http://avocado-framework.readthedocs.org/en/latest/api/utils/avocado.utils.html#module-avocado.utils.output
+| [1] http://avocado-framework.readthedocs.org/en/latest/api/utils/afutils.html#module-afutils.cpu
+| [2] http://avocado-framework.readthedocs.org/en/latest/api/utils/afutils.html#module-afutils.git
+| [3] http://avocado-framework.readthedocs.org/en/latest/api/utils/afutils.html#module-afutils.iso9660
+| [4] http://avocado-framework.readthedocs.org/en/latest/api/utils/afutils.html#module-afutils.service
+| [5] http://avocado-framework.readthedocs.org/en/latest/api/utils/afutils.html#module-afutils.output
 | [6] https://github.com/avocado-framework/avocado/compare/0.26.0...0.27.0
 | [7] https://github.com/avocado-framework/avocado-vt/commit/20dd39ef00db712f78419f07b10b8f8edbd19942
 | [8] http://avocado-vt.readthedocs.org/en/latest/GetStartedGuide.html

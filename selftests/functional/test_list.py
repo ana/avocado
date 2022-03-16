@@ -6,8 +6,9 @@ import subprocess
 import time
 import unittest
 
+from afutils import process, script
+
 from avocado.core import exit_codes
-from avocado.utils import process, script
 from selftests.utils import (AVOCADO, BASEDIR, TestCaseTmpDir,
                              skipOnLevelsInferiorThan)
 

@@ -6,11 +6,12 @@ import importlib
 import os
 import sys
 
+from afutils import genio  # pylint: disable=C0413
+from afutils import path  # pylint: disable=C0413
+from afutils import process  # pylint: disable=C0413
+
 from avocado.core import parameters
 from avocado.core.varianter import Varianter
-from avocado.utils import genio  # pylint: disable=C0413
-from avocado.utils import path  # pylint: disable=C0413
-from avocado.utils import process  # pylint: disable=C0413
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the

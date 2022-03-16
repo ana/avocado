@@ -1,7 +1,7 @@
 import sys
 import unittest
 
-from avocado.utils import astring
+from afutils import astring
 
 
 class AstringUtilsTest(unittest.TestCase):

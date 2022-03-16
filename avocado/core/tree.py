@@ -38,7 +38,7 @@ import copy
 import itertools
 import locale
 
-from avocado.utils import astring
+from afutils import astring
 
 
 class FilterSet(set):

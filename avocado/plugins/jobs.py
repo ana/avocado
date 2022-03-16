@@ -20,6 +20,8 @@ import os
 from datetime import datetime
 from glob import glob
 
+from afutils import astring
+
 from avocado.core import exit_codes, output
 from avocado.core.data_dir import get_job_results_dir, get_logs_dir
 from avocado.core.output import LOG_UI
@@ -28,7 +30,6 @@ from avocado.core.settings import settings
 from avocado.core.spawners.exceptions import SpawnerException
 from avocado.plugins.spawners.podman import PodmanSpawner
 from avocado.plugins.spawners.process import ProcessSpawner
-from avocado.utils import astring
 
 
 class Jobs(CLICmd):

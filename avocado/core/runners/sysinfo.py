@@ -3,10 +3,11 @@ import os
 import time
 import traceback
 
+from afutils import sysinfo as sysinfo_collectible
+from afutils.software_manager import manager
+
 from avocado.core import nrunner
 from avocado.core.runners.utils import messages
-from avocado.utils import sysinfo as sysinfo_collectible
-from avocado.utils.software_manager import manager
 
 
 class PreSysInfo:

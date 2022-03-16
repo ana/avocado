@@ -2,9 +2,10 @@ import os
 import tempfile
 import unittest
 
+from afutils import path as utils_path
+from afutils import process, script
+
 from avocado.core import exit_codes
-from avocado.utils import path as utils_path
-from avocado.utils import process, script
 from selftests.utils import AVOCADO, BASEDIR, TestCaseTmpDir
 
 SCRIPT_CONTENT = """#!/bin/bash

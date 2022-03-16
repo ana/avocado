@@ -22,13 +22,13 @@ Users/Test Writers
    should setup the remote machines so that tests are available before
    Avocado attempts to run them.
 
- * The :mod:`avocado.utils.process` library, one of the most complex
+ * The :mod:`afutils.process` library, one of the most complex
    pieces of utility code that Avocado ships, now makes it possible to
    ignore background processes that never finish (while Avocado is
    reading from their file descriptors to properly return their output
    to the caller).  The reason for such a feature is that if a command
    spawn many processes, specially daemon-like ones that never finish,
-   the :func:`avocado.utils.process.run` function would hang
+   the :func:`afutils.process.run` function would hang
    indefinitely.  Since waiting for all the children processes to
    finish is the right thing to do, users need to set the
    ``ignore_bg_processes`` parameter to ``True`` to request this newly
@@ -72,7 +72,7 @@ Bugfixes
  * During the previous development cycle, a bug where ``journalctl``
    would receive `KeyboardInterrupt` received an workaround by using
    the :mod:`subprocess` library instead of Avocado's own
-   :mod:`avocado.utils.process`, which was missing a default handler
+   :mod:`afutils.process`, which was missing a default handler
    for `SIGINT`.  With the misbehavior of Avocado's library now
    properly addressed, and consequently, we've reverted the workaround
    applied previously.

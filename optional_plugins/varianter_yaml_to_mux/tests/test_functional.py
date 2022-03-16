@@ -5,8 +5,9 @@ import shutil
 import tempfile
 import unittest
 
+from afutils import genio, process
+
 from avocado.core import exit_codes
-from avocado.utils import genio, process
 from selftests.utils import AVOCADO, BASEDIR
 
 

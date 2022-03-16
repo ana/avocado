@@ -21,11 +21,12 @@ import glob
 import os
 import re
 
+from afutils import path as utils_path
+
 from avocado.core.nrunner import Runnable
 from avocado.core.plugin_interfaces import Resolver
 from avocado.core.resolver import (ReferenceResolution,
                                    ReferenceResolutionResult)
-from avocado.utils import path as utils_path
 
 try:
     GO_BIN = utils_path.find_command('go')

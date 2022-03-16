@@ -1,5 +1,6 @@
+from afutils import kernel
+
 from avocado import Test
-from avocado.utils import kernel
 
 
 class LinuxBuildTest(Test):

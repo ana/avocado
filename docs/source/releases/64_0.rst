@@ -20,7 +20,7 @@ Users/Test Writers
   is provided thanks to a collaboration with the Czech Technical
   University in Prague.
 
-* The :mod:`avocado.utils.distro` module has dropped the probe that
+* The :mod:`afutils.distro` module has dropped the probe that
   depended on the Python standard library :func:`platform.dist`.  The
   reason is the :func:`platform.dist` has been deprecated since Python
   2.6, and has been removed on the upcoming Python 3.8.
@@ -28,38 +28,38 @@ Users/Test Writers
 * All optional plugins available on Python 2 RPM packages are now also
   available on Python 3 based RPM packages.
 
-* The :mod:`avocado.utils.iso9660` module gained a pycdlib based
+* The :mod:`afutils.iso9660` module gained a pycdlib based
   backend, which is very capable, and pure Python ISO9660 library.
-  This allows us to have a working :mod:`avocado.utils.iso9660`
+  This allows us to have a working :mod:`afutils.iso9660`
   backend on environments in which other backends may not be easily
   installable.
 
-* The :func:`avocado.utils.iso9660.iso9660` function gained a
+* The :func:`afutils.iso9660.iso9660` function gained a
   capabilities mechanism, in which users may request a backend that
   implement a given set of features.
 
-* The :mod:`avocado.utils.iso9660` module, gained "create" and "write"
+* The :mod:`afutils.iso9660` module, gained "create" and "write"
   capabilities, currently implemented on the pycdlib based backend.
-  This allows users of the :mod:`avocado.utils.iso9660` module to
+  This allows users of the :mod:`afutils.iso9660` module to
   create ISO images programmatically - a task that was previously done
   by running ``mkisofs`` and similar tools.
 
-* The :func:`avocado.utils.vmimage.get` function now provides a
+* The :func:`afutils.vmimage.get` function now provides a
   directory in which to put the snapshot file, which is usually
   discarded.  Previously, the snapshot file would always be kept in
   the cache directory, resulting in its pollution.
 
-* The :mod:`avocado.utils.download` module, and the various utility
+* The :mod:`afutils.download` module, and the various utility
   functions that use it, will have extended logging, including the
   file size, time stamp information, etc.
 
-* A brand new module, :mod:`avocado.utils.cloudinit`, that aides in
+* A brand new module, :mod:`afutils.cloudinit`, that aides in
   the creation of ISO files containing configuration for the virtual
   machines compatible with cloudinit.  Besides authentication
   credentials, it's also possible to define a "phone home" address,
   which is complemented by a simple phone home server implementation.
   On top of that, a very easy to use function to wait on the phone
-  home is available as :func:`avocado.utils.cloudinit.wait_for_phone_home`.
+  home is available as :func:`afutils.cloudinit.wait_for_phone_home`.
 
 * The Human UI plugin, will now show the "reason" behind test
   failures, cancellations and others right along the test result
@@ -69,7 +69,7 @@ Users/Test Writers
 Bug Fixes
 =========
 
-* The :mod:`avocado.utils.partition` now behaves better when the
+* The :mod:`afutils.partition` now behaves better when the
   system is missing the ``lsof`` utility.
 
 Internal Changes

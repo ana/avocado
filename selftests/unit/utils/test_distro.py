@@ -1,7 +1,7 @@
 import re
 import unittest.mock
 
-from avocado.utils import distro
+from afutils import distro
 
 
 class ProbeTest(unittest.TestCase):
@@ -62,7 +62,7 @@ class ProbeTest(unittest.TestCase):
             CHECK_FILE_DISTRO_NAME = distro_name
 
         my_probe = MyProbe()
-        with unittest.mock.patch('avocado.utils.distro.os.path.exists',
+        with unittest.mock.patch('afutils.distro.os.path.exists',
                                  return_value=True) as mocked:
             probed_distro_name = my_probe.name_for_file()
             mocked.assert_called_once_with(distro_file)

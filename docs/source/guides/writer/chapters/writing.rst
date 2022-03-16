@@ -521,7 +521,7 @@ an example that does that::
         import os
 
         from avocado import Test
-        from avocado.utils import archive, build, process
+        from afutils import archive, build, process
 
 
         class SyncTest(Test):
@@ -568,13 +568,13 @@ an example that does that::
 Here we have an example of the ``setUp`` method in action: Here we get the
 location of the test suite code (tarball) through
 :func:`avocado.Test.get_data`, then uncompress the tarball through
-:func:`avocado.utils.archive.extract`, an API that will
-decompress the suite tarball, followed by :func:`avocado.utils.build.make`, that will build
+:func:`afutils.archive.extract`, an API that will
+decompress the suite tarball, followed by :func:`afutils.build.make`, that will build
 the suite.
 
 In this example, the ``test`` method just gets into the base directory of
 the compiled suite  and executes the ``./synctest`` command, with appropriate
-parameters, using :func:`avocado.utils.process.system`.
+parameters, using :func:`afutils.process.system`.
 
 .. _Fetching asset files:
 
@@ -1242,9 +1242,9 @@ installed by a package::
 
   from avocado import Test
 
-  from avocado.utils.software_manager import distro_packages
-  from avocado.utils import path as utils_path
-  from avocado.utils import process
+  from afutils.software_manager import distro_packages
+  from afutils import path as utils_path
+  from afutils import process
 
 
   class BinSleep(Test):
@@ -1444,7 +1444,7 @@ Because ``once`` was set to ``True``, only one unique combination of
 function, positional arguments and keyword arguments will be
 registered, not matter how many times they're attempted to be
 registered. For more information check
-:meth:`avocado.utils.data_structures.CallbackRegister.register`.
+:meth:`afutils.data_structures.CallbackRegister.register`.
 
 .. _docstring-directive-rules:
 

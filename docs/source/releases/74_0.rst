@@ -35,31 +35,31 @@ Bug Fixes
 Utility APIs
 ============
 
-* :mod:`avocado.utils.kernel` received a number of fixes and cleanups,
+* :mod:`afutils.kernel` received a number of fixes and cleanups,
   and also new features.  It's now possible to configure the kernel for
   multiple targets, and also set kernel configurations at configuration
   time without manually touching the kernel configuration files.  It
-  also introduced the :func:`avocado.utils.kernel.KernelBuild.vmlinux`
+  also introduced the :func:`afutils.kernel.KernelBuild.vmlinux`
   property, allowing users to access that image if it was built.
 
-* :mod:`avocado.utils.network` utilities
-  :func:`avocado.utils.network.ping_check` and
-  :func:`avocado.utils.network.set_mtu_host` now are plain functions,
+* :mod:`afutils.network` utilities
+  :func:`afutils.network.ping_check` and
+  :func:`afutils.network.set_mtu_host` now are plain functions,
   instead of methods of a class that shared nothing between them.
 
 * New functions such as
-  :func:`avocado.utils.multipath.add_path`,
-  :func::func:`avocado.utils.multipath.remove_path`
-  :func:`avocado.utils.multipath.get_mpath_status` and
-  :func:`avocado.utils.multipath.suspend_mpath` have been introduced
-  :func:to the :mod:`avocado.utils.multipath` module.
+  :func:`afutils.multipath.add_path`,
+  :func::func:`afutils.multipath.remove_path`
+  :func:`afutils.multipath.get_mpath_status` and
+  :func:`afutils.multipath.suspend_mpath` have been introduced
+  :func:to the :mod:`afutils.multipath` module.
 
-* The :mod:`avocado.utils.vmimage` module will not try to create
+* The :mod:`afutils.vmimage` module will not try to create
   snapshot images when it's not needed, acting lazily in that regard.
   It now provides a different method for download-only operations,
-  :meth:`avocado.utils.vmimage.Image.download` that returns the base
+  :meth:`afutils.vmimage.Image.download` that returns the base
   image location.  The behavior of the
-  :meth:`avocado.utils.vmimage.Image.get` method is unchanged in the
+  :meth:`afutils.vmimage.Image.get` method is unchanged in the
   sense that it returns the path of a snapshot image.
 
 Internal Changes

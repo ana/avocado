@@ -34,15 +34,16 @@ import unittest
 import warnings
 from difflib import unified_diff
 
+from afutils import asset, astring, data_structures, genio
+from afutils import path as utils_path
+from afutils import process, stacktrace
+
 from avocado.core import exceptions, output, parameters, sysinfo, tapparser
 from avocado.core.decorators import skip
 from avocado.core.output import LOG_JOB
 from avocado.core.settings import settings
 from avocado.core.test_id import TestID
 from avocado.core.version import VERSION
-from avocado.utils import asset, astring, data_structures, genio
-from avocado.utils import path as utils_path
-from avocado.utils import process, stacktrace
 
 #: Environment variable used to store the location of a temporary
 #: directory which is preserved across all tests execution (usually in
@@ -959,7 +960,7 @@ class Test(unittest.TestCase, TestData):
         :param name: the asset filename or URL
         :param asset_hash: asset hash (optional)
         :param algorithm: hash algorithm (optional, defaults to
-                          :data:`avocado.utils.asset.DEFAULT_HASH_ALGORITHM`)
+                          :data:`afutils.asset.DEFAULT_HASH_ALGORITHM`)
         :param locations: list of URLs from where the asset can be
                           fetched (optional)
         :param expire: time for the asset to expire
@@ -1069,7 +1070,7 @@ class SimpleTest(Test):
         """
         Log detailed command information.
 
-        :param result: :class:`avocado.utils.process.CmdResult` instance.
+        :param result: :class:`afutils.process.CmdResult` instance.
         """
         self.log.info("Detailed information about the executed command:")
         self.log.info("  Exit status: %s", result.exit_status)

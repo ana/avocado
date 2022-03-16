@@ -20,7 +20,7 @@ $COVERAGE combine .coverage*
 echo
 $COVERAGE report -m --include "avocado/core/*"
 echo
-$COVERAGE report -m --include "avocado/utils/*"
+$COVERAGE report -m --include "afutils/*"
 echo
 $COVERAGE report -m --include "avocado/plugins/*"
 echo

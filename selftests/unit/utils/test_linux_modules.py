@@ -1,8 +1,9 @@
 import io
 import unittest.mock
 
+from afutils import linux_modules
+
 from avocado import Test
-from avocado.utils import linux_modules
 
 
 class Lsmod(Test):

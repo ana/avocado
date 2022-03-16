@@ -17,7 +17,7 @@ Users/Test Writers
  * Multiplex: remove the `-s` (system-wide) shortcut to avoid
    confusion with `silent` from main apps.
 
- * New :meth:`avocado.utils.linux_modules.check_kernel_config()`
+ * New :meth:`afutils.linux_modules.check_kernel_config()`
    method, with which users can check if a kernel configuration is not
    set, a module or built-in.
 
@@ -79,7 +79,7 @@ Bugfixes
  * Sysinfo: respect package collection on/off configuration.
 
  * Use `-y` in `lvcreate` to ignore warnings
-   :mod:`avocado.utils.lv_utils`.
+   :mod:`afutils.lv_utils`.
 
  * Fix crash in :mod:`avocado.core.tree` when printing non-string
    values.
@@ -98,7 +98,7 @@ Internal improvements
  * Partition utility class defaults to ext2. We documented that and
    reinforced in the accompanying unittests.
 
- * Unittests for :mod:`avocado.utils.partition` has now more specific
+ * Unittests for :mod:`afutils.partition` has now more specific
    checks for the conditions necessary to run the Partition tests
    (sudo, mkfs.ext2 binary).
 

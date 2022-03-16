@@ -36,9 +36,9 @@ Bug Fixes
 Utility APIs
 ============
 
-* The :mod:`avocado.utils.cpu` now makes available a mapping of
+* The :mod:`afutils.cpu` now makes available a mapping of
   vendor names to the data that matches in ``/proc/cpuinfo`` on
-  that vendor's CPUs (:data:`avocado.utils.cpu.VENDORS_MAP`).
+  that vendor's CPUs (:data:`afutils.cpu.VENDORS_MAP`).
   This allows users to have visibility about the logic used to
   determine the vendor's name, and  overwrite it if needed.
 

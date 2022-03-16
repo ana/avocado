@@ -42,7 +42,7 @@ Bug Fixes
   base system temporary directory, which makes it very hard to exceed
   the path length limit.
 
-* The :mod:`avocado.utils.vmimage` library received the following
+* The :mod:`afutils.vmimage` library received the following
   improvements:
 
   1. Ubuntu's provider now properly handles the version number when it
@@ -89,7 +89,7 @@ Utility APIs
 ============
 
 * The new method
-  `avocado.utils.network.interfaces.NetworkInterface.is_bond` that
+  `afutils.network.interfaces.NetworkInterface.is_bond` that
   allows users to check if a given interface is a bonding device.
 
 Misc Changes

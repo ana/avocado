@@ -1,7 +1,8 @@
 import os
 
+from afutils import gdb, genio, process
+
 from avocado import Test
-from avocado.utils import gdb, genio, process
 
 
 class GdbTest(Test):

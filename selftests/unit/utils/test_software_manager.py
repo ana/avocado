@@ -1,8 +1,9 @@
 import os
 import unittest
 
-from avocado.utils import distro
-from avocado.utils.software_manager import backends, manager
+from afutils import distro
+from afutils.software_manager import backends, manager
+
 from selftests.utils import BASEDIR, setup_avocado_loggers
 
 setup_avocado_loggers()

@@ -77,7 +77,7 @@ Utility APIs
 
 * A specific exception, and thus a clearer error message, is now used
   when a command with an empty string is given to
-  :func:`avocado.utils.process.run`.
+  :func:`afutils.process.run`.
 
 Misc Changes
 ============

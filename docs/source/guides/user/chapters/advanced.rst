@@ -204,6 +204,6 @@ Caveats
   present in two wrappers, you have to combine those into a single
   wrapper script.
 
-* Only executables that are run with the :mod:`avocado.utils.process` APIs
-  (and other API modules that make use of it, like mod:`avocado.utils.build`)
+* Only executables that are run with the :mod:`afutils.process` APIs
+  (and other API modules that make use of it, like mod:`afutils.build`)
   are affected by this feature.

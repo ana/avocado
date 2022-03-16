@@ -1,6 +1,6 @@
 import unittest
 
-from avocado.utils.gdb import GDBRemote, InvalidPacketError
+from afutils.gdb import GDBRemote, InvalidPacketError
 
 
 class GDBRemoteTest(unittest.TestCase):

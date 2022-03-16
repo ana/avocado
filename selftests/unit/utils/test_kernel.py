@@ -1,6 +1,7 @@
 import unittest
 
-from avocado.utils.kernel import KernelBuild
+from afutils.kernel import KernelBuild
+
 from selftests.utils import setup_avocado_loggers
 
 setup_avocado_loggers()

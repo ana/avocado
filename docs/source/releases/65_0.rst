@@ -14,7 +14,7 @@ roughly categorized into major topics and intended audience:
 Users/Test Writers
 ==================
 
-* A new utility library, :mod:`avocado.utils.ssh`, has been
+* A new utility library, :mod:`afutils.ssh`, has been
   introduced.  It's a simple wrapper around the OpenSSH client
   utilities (your regular ``/usr/bin/ssh``) and allows a
   connection/session to be easily established, and commands to be
@@ -27,33 +27,33 @@ Users/Test Writers
   pass one parameter to a test, use ``-p NAME=VAL``, and repeat it
   for other parameters.
 
-* The ``timeout`` feature on the various :mod:`avocado.utils.process`
+* The ``timeout`` feature on the various :mod:`afutils.process`
   functions is now respected for processes started with ``sudo=True``.
   Sending general signals to processes that have also been started in
   privileged mode (and killing them) is now possible and is the basis
   of this improvement.
 
-* The :mod:`avocado.utils.cloudinit` module now adds support for
+* The :mod:`afutils.cloudinit` module now adds support for
   instances to be configured to allow ``root`` logins and
   authentication configuration via SSH keys.
 
-* The :mod:`avocado.utils.distro` module introduced a probe for the
+* The :mod:`afutils.distro` module introduced a probe for the
   Ubuntu distros.
 
-* New :func:`avocado.utils.disk.get_disk_blocksize` and
-  :func:`avocado.utils.disk.get_disks` disk related utilities.
+* New :func:`afutils.disk.get_disk_blocksize` and
+  :func:`afutils.disk.get_disks` disk related utilities.
 
-* New :func:`avocado.utils.process.get_parent_pid` and
-  :func:`avocado.utils.process.get_owner_id` process related functions
+* New :func:`afutils.process.get_parent_pid` and
+  :func:`afutils.process.get_owner_id` process related functions
 
 Bug Fixes
 =========
 
-* The :mod:`avocado.utils.vmimage` had an issue when dealing with bytes
+* The :mod:`afutils.vmimage` had an issue when dealing with bytes
   and strings on Python 3.  Now the expected encoding on the parsed web
   pages is explicitly given and used.
 
-* The :func:`avocado.utils.linux_modules.get_submodules` function now
+* The :func:`afutils.linux_modules.get_submodules` function now
   returns unique modules names, instead of possibly having duplicate
   modules names.
   
@@ -74,8 +74,8 @@ Bug Fixes
 Internal Changes
 ================
 
-* A number of utility libraries, including :mod:`avocado.utils.process`
-  and :mod:`avocado.utils.linux_modules` have been modified to use
+* A number of utility libraries, including :mod:`afutils.process`
+  and :mod:`afutils.linux_modules` have been modified to use
   system files (such as the ones from ``/proc/``) instead of depending
   and executing command line utilities whenever possible.  This type
   of change is expected to continue happening on Avocado.
@@ -92,8 +92,8 @@ Internal Changes
   source code better now, and avoiding best practices regressions.
 
 * Fixes to self tests that require privileged execution (tests
-  covering the mount support in :mod:`avocado.utils.vmimage` and
-  general operation of the :mod:`avocado.utils.lv_utils` module).
+  covering the mount support in :mod:`afutils.vmimage` and
+  general operation of the :mod:`afutils.lv_utils` module).
 
 For more information, please check out the complete
 `Avocado changelog

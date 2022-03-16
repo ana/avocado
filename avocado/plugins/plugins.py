@@ -15,11 +15,12 @@
 Plugins information plugin
 """
 
+from afutils import astring
+
 from avocado.core import dispatcher
 from avocado.core.output import LOG_UI
 from avocado.core.plugin_interfaces import CLICmd
 from avocado.core.resolver import Resolver
-from avocado.utils import astring
 
 
 class Plugins(CLICmd):

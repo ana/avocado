@@ -44,9 +44,9 @@ Utility APIs
 ============
 
 * A previously deprecated function called ``thin_lv_created`` was removed
-  from the :mod:`avocado.utils.lv_utils` module.
+  from the :mod:`afutils.lv_utils` module.
 
-* :func:`avocado.utils.configure_network.is_interface_link_up` is a
+* :func:`afutils.configure_network.is_interface_link_up` is a
   new utility function that returns, quite obviously, whether an
   interface link is up.
 
@@ -56,10 +56,10 @@ Internal Changes
 * Inspektor was replaced with a PyLint for the lint checks due to parallel
   execution errors that were plaguing CI, mostly on non-x86 architectures.
 
-* The :mod:`avocado.utils.asset` received a number of refactors, in
+* The :mod:`afutils.asset` received a number of refactors, in
   preparation for some major changes expected for the next releases.
 
-* The :mod:`avocado.utils.cloudinit` selftest now queries the
+* The :mod:`afutils.cloudinit` selftest now queries the
   allocated port from the created socket itself, which removes a race
   condition that existed previously and caused intermittent test
   failures.

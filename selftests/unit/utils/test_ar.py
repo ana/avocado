@@ -1,7 +1,8 @@
 import os
 import unittest
 
-from avocado.utils import ar
+from afutils import ar
+
 from selftests.utils import BASEDIR
 
 

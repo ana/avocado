@@ -1,7 +1,8 @@
 import os
 
+from afutils import archive, build, process
+
 from avocado import Test, fail_on
-from avocado.utils import archive, build, process
 
 
 class Hello(Test):

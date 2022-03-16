@@ -7,7 +7,7 @@
  * For example, if SIGUSR1 is raised (sinal number 10) then
  * the exit code will be 128+10 = 138.
  *
- * In the case of avocado.utils.process.SubProcess, the exit code is
+ * In the case of afutils.process.SubProcess, the exit code is
  * the negative value of the signal, so SIGUSR1 will return -10.
  *
  * See http://tldp.org/LDP/abs/html/exitcodes.html

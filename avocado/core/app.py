@@ -20,12 +20,13 @@ import os
 import signal
 import sys
 
+from afutils import process
+
 from avocado.core import output
 from avocado.core.dispatcher import CLICmdDispatcher, CLIDispatcher
 from avocado.core.output import STD_OUTPUT
 from avocado.core.parser import Parser
 from avocado.core.settings import settings
-from avocado.utils import process
 
 
 class AvocadoApp:

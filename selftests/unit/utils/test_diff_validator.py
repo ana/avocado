@@ -4,7 +4,8 @@ import os
 import tempfile
 import unittest
 
-from avocado.utils import diff_validator
+from afutils import diff_validator
+
 from selftests.utils import temp_dir_prefix
 
 

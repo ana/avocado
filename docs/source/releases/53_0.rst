@@ -35,7 +35,7 @@ Users/Test Writers
 * Test writers will get better protection against mistakes when trying
   to overwrite :class:`avocado.core.test.Test` "properties".  Some of
   those were previously implemented using
-  :func:`avocado.utils.data_structures.LazyProperty` which did not
+  :func:`afutils.data_structures.LazyProperty` which did not
   prevent test writers from overwriting them.
 
 Internal Changes

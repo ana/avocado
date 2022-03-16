@@ -48,7 +48,7 @@ Users/Test Writers
   The reason for doing so, was to fix a bug that could leave profiler
   processes after the test had already finished.
 
-* The newly introduced :mod:`avocado.utils.vmimage` library can
+* The newly introduced :mod:`afutils.vmimage` library can
   immensely help test writers that need access to virtual machine
   images in their tests.  The simplest use of the API,
   ``vmimage.get()`` returns a ready to use disposable image (snapshot
@@ -62,12 +62,12 @@ Users/Test Writers
   environment also in this aspect.
 
 * A new network related utility function,
-  :class:`avocado.utils.network.PortTracker` was ported from
+  :class:`afutils.network.PortTracker` was ported from
   Avocado-Virt, given the perceived general value in a variety of
   tests.
 
-* A new memory utility utility, :class:`avocado.utils.memory.MemInfo`,
-  and its ready to use instance :data:`avocado.utils.memory.meminfo`,
+* A new memory utility utility, :class:`afutils.memory.MemInfo`,
+  and its ready to use instance :data:`afutils.memory.meminfo`,
   allows easy access to most memory related information on Linux
   systems.
 

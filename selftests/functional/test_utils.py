@@ -6,9 +6,10 @@ import sys
 import time
 import unittest
 
-from avocado.utils import process
-from avocado.utils.filelock import FileLock
-from avocado.utils.stacktrace import prepare_exc_info
+from afutils import process
+from afutils.filelock import FileLock
+from afutils.stacktrace import prepare_exc_info
+
 from selftests.utils import TestCaseTmpDir, skipOnLevelsInferiorThan
 
 # What is commonly known as "0775" or "u=rwx,g=rwx,o=rx"

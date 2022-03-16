@@ -2,11 +2,12 @@ import json
 import os
 import re
 
+from afutils import astring, vmimage
+
 from avocado.core import exit_codes, output
 from avocado.core.output import LOG_UI
 from avocado.core.plugin_interfaces import CLICmd
 from avocado.core.settings import settings
-from avocado.utils import astring, vmimage
 
 
 def list_downloaded_images():

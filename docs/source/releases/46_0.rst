@@ -27,7 +27,7 @@ Users/Test Writers
  * Users will receive better error messages from the multiplexer
    (variant subsystem) when the given YAML files do not exist.
 
- * Users of the :func:`avocado.utils.process.system_output` will now
+ * Users of the :func:`afutils.process.system_output` will now
    get the command output with the trailing newline stripped by
    default.  If needed, a parameter can be used to preserve the
    newline.  This is now consistent with most Python process execution

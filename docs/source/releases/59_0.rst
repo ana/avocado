@@ -43,13 +43,13 @@ Users/Test Writers
   or SKIP from the underlying executable.  This is now configurable by
   means of regular expressions.
 
-* The :mod:`avocado.utils.process` has seen a number of changes
+* The :mod:`afutils.process` has seen a number of changes
   related to how it handles data from the executed processes.  In a
   nutshell, process output (on both ``stdout`` and ``stderr``) is now
   considered binary data.  Users that need to deal with text instead,
   should use the newly added
-  :attr:`avocado.utils.process.CmdResult.stdout_text` and
-  :attr:`avocado.utils.process.CmdResult.stderr_text`, which are
+  :attr:`afutils.process.CmdResult.stdout_text` and
+  :attr:`afutils.process.CmdResult.stderr_text`, which are
   convenience properties that will attempt to decode the ``stdout`` or
   ``stderr`` data into a string-like type using the encoding set, and
   if none is set, falling back to the system default encoding.  This
@@ -104,7 +104,7 @@ Bug Fixes
 
 * Linux distributions detection code has been fixed for SuSE systems.
 
-* The :mod:`avocado.utils.kernel` library now supports fetching all
+* The :mod:`afutils.kernel` library now supports fetching all
   major versions of the Linux kernel, and not only kernels from the
   3.x series.
 

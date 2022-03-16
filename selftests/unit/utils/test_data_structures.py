@@ -1,12 +1,12 @@
 import unittest
 
-from avocado.utils import data_structures
+from afutils import data_structures
 
 
 class TestDataStructures(unittest.TestCase):
 
     """
-    Unit tests for avocado.utils.data_structures
+    Unit tests for afutils.data_structures
     """
 
     def test_ordered_list_unique(self):

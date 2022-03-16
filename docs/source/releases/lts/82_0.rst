@@ -61,7 +61,7 @@ Porting Tests (Utility API compatibility)
 -----------------------------------------
 
 The changes in the utility APIs (those that live under the
-``avocado.utils`` namespace are too many to present porting
+``afutils`` namespace are too many to present porting
 suggestion.  Please refer to the :ref:`lts_82_0_utility_apis` section
 for a comprehensive list of changes, including new features your test
 may be able to leverage.
@@ -111,7 +111,7 @@ Users
   by different tests/variants will be consolidated into unique files.
 
 * The new ``vmimage`` command allows a user to list the virtual
-  machine images downloaded by means of :mod:`avocado.utils.vmimage`
+  machine images downloaded by means of :mod:`afutils.vmimage`
   or download new images via the avocado ``vmimage get`` command.
 
 * The avocado ``assets fetch`` command now accepts a
@@ -147,7 +147,7 @@ Users
   containing counters for the tests that ended with WARN and
   INTERRUPTED status, respectively.
 
-* Avocado's :mod:`avocado.utils.software_manager` functionality is now
+* Avocado's :mod:`afutils.software_manager` functionality is now
   also made available as the ``avocado-software-manager`` command-line
   tool.
 
@@ -255,12 +255,12 @@ Test Writers
   introduced, that allows you to describe the variations of tests in a
   test suite directly via a Python dictionary.
 
-* The ``avocado.utils.runtime`` module has been removed.
+* The ``afutils.runtime`` module has been removed.
 
 * The test runner feature that would allow binaries to be run
   transparently inside GDB was removed. The reason for dropping such a
   feature has to do with how it limits the test runner to run one test
-  at a time, and the use of the ``avocado.utils.runtime`` mechanism,
+  at a time, and the use of the ``afutils.runtime`` mechanism,
   also removed.
 
 * The "standalone job" feature was removed. The alternative is to use
@@ -273,142 +273,142 @@ Test Writers
 Utility APIs
 ------------
 
-* Two simple utility APIs, :func:`avocado.utils.genio.append_file` and
-  :func:`avocado.utils.genio.append_one_line` have been added.
+* Two simple utility APIs, :func:`afutils.genio.append_file` and
+  :func:`afutils.genio.append_one_line` have been added.
 
-* The new :mod:`avocado.utils.datadrainer` provides an easy way to
+* The new :mod:`afutils.datadrainer` provides an easy way to
   read from and write to various input/output sources without blocking
   a test (by spawning a thread for that).
 
-* The new :mod:`avocado.utils.diff_validator` can help test writers to
+* The new :mod:`afutils.diff_validator` can help test writers to
   make sure that given changes have been applied to files.
 
-* :mod:`avocado.utils.partition` now allows ``mkfs`` and ``mount``
+* :mod:`afutils.partition` now allows ``mkfs`` and ``mount``
   flags to be set.
 
-* Users of the :func:`avocado.utils.partition.mount` function can now
+* Users of the :func:`afutils.partition.mount` function can now
   skip checking if the devices/mountpoints are mounted, which is
   useful for bind mounts.
 
-* :func:`avocado.utils.cpu.get_cpu_vendor_name` now returns the CPU
+* :func:`afutils.cpu.get_cpu_vendor_name` now returns the CPU
   vendor name for POWER9.
 
-* The :mod:`avocado.utils.cpu` changed how it identifies CPU vendors,
+* The :mod:`afutils.cpu` changed how it identifies CPU vendors,
   architectures, and families, making those more consistent across the
   board.
 
-* The names of the :mod:`avocado.utils.cpu` functions changed, from
+* The names of the :mod:`afutils.cpu` functions changed, from
   what's listed on left hand side (now deprecated) the ones on the
   right hand side:
 
- * :func:`avocado.utils.cpu.total_cpus_count` => :func:`avocado.utils.cpu.total_count`
- * :func:`avocado.utils.cpu._get_cpu_info` => :func:`avocado.utils.cpu._get_info`
- * :func:`avocado.utils.cpu._get_cpu_status` => :func:`avocado.utils.cpu._get_status`
- * :func:`avocado.utils.cpu.get_cpu_vendor_name` => :func:`avocado.utils.cpu.get_vendor`
- * :func:`avocado.utils.cpu.get_cpu_arch` => :func:`avocado.utils.cpu.get_arch`
- * :func:`avocado.utils.cpu.cpu_online_list` => :func:`avocado.utils.cpu.online_list`
- * :func:`avocado.utils.cpu.online_cpus_count` => :func:`avocado.utils.cpu.online_count`
- * :func:`avocado.utils.cpu.get_cpuidle_state` => :func:`avocado.utils.cpu.get_idle_state`
- * :func:`avocado.utils.cpu.set_cpuidle_state` => :func:`avocado.utils.cpu.set_idle_state`
- * :func:`avocado.utils.cpu.set_cpufreq_governor` => :func:`avocado.utils.cpu.set_freq_governor`
- * :func:`avocado.utils.cpu.get_cpufreq_governor` => :func:`avocado.utils.cpu.get_freq_governor`
+ * :func:`afutils.cpu.total_cpus_count` => :func:`afutils.cpu.total_count`
+ * :func:`afutils.cpu._get_cpu_info` => :func:`afutils.cpu._get_info`
+ * :func:`afutils.cpu._get_cpu_status` => :func:`afutils.cpu._get_status`
+ * :func:`afutils.cpu.get_cpu_vendor_name` => :func:`afutils.cpu.get_vendor`
+ * :func:`afutils.cpu.get_cpu_arch` => :func:`afutils.cpu.get_arch`
+ * :func:`afutils.cpu.cpu_online_list` => :func:`afutils.cpu.online_list`
+ * :func:`afutils.cpu.online_cpus_count` => :func:`afutils.cpu.online_count`
+ * :func:`afutils.cpu.get_cpuidle_state` => :func:`afutils.cpu.get_idle_state`
+ * :func:`afutils.cpu.set_cpuidle_state` => :func:`afutils.cpu.set_idle_state`
+ * :func:`afutils.cpu.set_cpufreq_governor` => :func:`afutils.cpu.set_freq_governor`
+ * :func:`afutils.cpu.get_cpufreq_governor` => :func:`afutils.cpu.get_freq_governor`
 
-* Additionally, :func:`avocado.utils.cpu.get_arch` implementation for
+* Additionally, :func:`afutils.cpu.get_arch` implementation for
   powerpc has been corrected to return ``powerpc`` instead of cpu
   family values like ``power8``, ``power9``.
 
-* New :func:`avocado.utils.cpu.get_family` is added to get the cpu family
+* New :func:`afutils.cpu.get_family` is added to get the cpu family
   values like ``power8``, ``power9``.
 
-* The :func:`avocado.utils.cpu.online` and
-  :func:`avocado.utils.cpu.offline` will now check the status of the
+* The :func:`afutils.cpu.online` and
+  :func:`afutils.cpu.offline` will now check the status of the
   CPU before attempting to apply a possibly (unnecessary) action.
 
-* The :mod:`avocado.utils.asset` module now allows a given location,
+* The :mod:`afutils.asset` module now allows a given location,
   as well as a list, to be given, simplifying the most common use
   case.
 
-* :meth:`avocado.utils.process.SubProcess.stop` now supports setting a
+* :meth:`afutils.process.SubProcess.stop` now supports setting a
   timeout.
 
-* :mod:`avocado.utils.memory` now properly handles huge pages for the
+* :mod:`afutils.memory` now properly handles huge pages for the
   POWER platform.
 
-* :mod:`avocado.utils.ssh` now allows password-based authentication,
+* :mod:`afutils.ssh` now allows password-based authentication,
   in addition to public key-based authentication.
 
-* The new :meth:`avocado.utils.ssh.Session.get_raw_ssh_command` method
+* The new :meth:`afutils.ssh.Session.get_raw_ssh_command` method
   allows access to the generated (local) commands, which could be used
   for advanced use cases, such as running multiple (remote) commands
   in a test. See the ``examples/apis/utils/ssh.py`` for an example.
 
-* The :meth:`avocado.utils.ssh.Session.cmd` method now allows users to
+* The :meth:`afutils.ssh.Session.cmd` method now allows users to
   ignore the exit status of the command with the `ignore_status
   parameter`.
 
-* :func:`avocado.utils.path.usable_ro_dir` will no longer create a
+* :func:`afutils.path.usable_ro_dir` will no longer create a
   directory, but will just check for its existence and the right level
   of access.
 
-* :func:`avocado.utils.archive.compress` and
-  :func:`avocado.utils.archive.uncompress` and now supports LZMA
+* :func:`afutils.archive.compress` and
+  :func:`afutils.archive.uncompress` and now supports LZMA
   compressed files transparently.
 
-* The :mod:`avocado.utils.vmimage` module now has providers for the
+* The :mod:`afutils.vmimage` module now has providers for the
   CirrOS cloud images.
 
-* The :mod:`avocado.utils.vmimage` library now allows a user to define
+* The :mod:`afutils.vmimage` library now allows a user to define
   the qemu-img binary that will be used for creating snapshot images
-  via the :data:`avocado.utils.vmimage.QEMU_IMG` variable.
+  via the :data:`afutils.vmimage.QEMU_IMG` variable.
 
-* The :mod:`avocado.utils.vmimage` module will not try to create
+* The :mod:`afutils.vmimage` module will not try to create
   snapshot images when it's not needed, acting lazily in that
   regard. It now provides a different method for download-only
-  operations, :meth:`avocado.utils.vmimage.Image.download` that
+  operations, :meth:`afutils.vmimage.Image.download` that
   returns the base image location. The behavior of the
-  :meth:`avocado.utils.vmimage.Image.get` method is unchanged in the
+  :meth:`afutils.vmimage.Image.get` method is unchanged in the
   sense that it returns the path of a snapshot image.
 
-* The :mod:`avocado.utils.configure_network` module introduced a number
+* The :mod:`afutils.configure_network` module introduced a number
   of utilities, including MTU configuration support, a method for
   validating network among peers, IPv6 support, etc.
 
-* The :func:`avocado.utils.configure_network.set_ip` function now
+* The :func:`afutils.configure_network.set_ip` function now
   supports different interface types through a ``interface_type``
   parameter, while still defaulting to Ethernet.
 
-* :func:`avocado.utils.configure_network.is_interface_link_up` is a
+* :func:`afutils.configure_network.is_interface_link_up` is a
   new utility function that returns, quite obviously, whether an
   interface link is up.
 
-* The :mod:`avocado.utils.network` module received a complete overhaul
+* The :mod:`afutils.network` module received a complete overhaul
   and provides features for getting, checking, and setting network
   information from local and even remote hosts.
 
-* The :mod:`avocado.utils.network.interfaces` module now supports
+* The :mod:`afutils.network.interfaces` module now supports
   different types of output produced by ``iproute``.
 
-* :mod:`avocado.utils.kernel` received a number of fixes and cleanups,
+* :mod:`afutils.kernel` received a number of fixes and cleanups,
   and also new features. It's now possible to configure the kernel for
   multiple targets, and also set kernel configurations at
   configuration time without manually touching the kernel
   configuration files. It also introduced the
-  :attr:`avocado.utils.kernel.KernelBuild.vmlinux` property, allowing
+  :attr:`afutils.kernel.KernelBuild.vmlinux` property, allowing
   users to access that image if it was built.
 
-* New functions such as :func:`avocado.utils.multipath.add_path`,
-  :func:`avocado.utils.multipath.remove_path`,
-  :func:`avocado.utils.multipath.get_mpath_status` and
-  :func:`avocado.utils.multipath.suspend_mpath` have been introduced
-  to the :mod:`avocado.utils.multipath` module.
+* New functions such as :func:`afutils.multipath.add_path`,
+  :func:`afutils.multipath.remove_path`,
+  :func:`afutils.multipath.get_mpath_status` and
+  :func:`afutils.multipath.suspend_mpath` have been introduced
+  to the :mod:`afutils.multipath` module.
 
-* The new :mod:`avocado.utils.pmem` module provides an interface to
+* The new :mod:`afutils.pmem` module provides an interface to
   manage persistent memory. It allows for creating, deleting,
   enabling, disabling, and re-configuring both namespaces and regions
   depending on supported hardware. It wraps the features present on
   the ndctl and daxctl binaries.
 
-* All of the :mod:`avocado.utils.gdb` APIs are now back to a working
+* All of the :mod:`afutils.gdb` APIs are now back to a working
   state, with many fixes related to bytes and strings, as well as
   buffered I/O caching fixes.
 

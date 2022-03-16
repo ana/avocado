@@ -61,7 +61,7 @@ Test API
 
    api/test/avocado
    api/core/avocado.core
-   api/utils/avocado.utils
+   api/utils/afutils
    api/plugins/avocado.plugins
    api/optional-plugins/index
 
@@ -85,7 +85,7 @@ Indices and tables
 ..    :maxdepth: 1
 .. 
 ..    api/test/avocado.rst
-..    api/utils/avocado.utils.rst
+..    api/utils/afutils.rst
 ..    api/core/avocado.core.rst
 ..    api/plugins/avocado.plugins.rst
 ..    api/optional-plugins/index.rst

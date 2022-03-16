@@ -51,15 +51,15 @@ Bug Fixes
 Utility APIs
 ============
 
-* :mod:`avocado.utils.pci` now accommodates newer slot names.
+* :mod:`afutils.pci` now accommodates newer slot names.
 
-* :mod:`avocado.utils.memory` now properly handles the 16GB hugepages
+* :mod:`afutils.memory` now properly handles the 16GB hugepages
   with both the HASH and Radix MMU (by removing the check in case
   Radix is used).
 
-* :class:`avocado.utils.ssh.Session` now contains a
-  :meth:`avocado.utils.ssh.Session.cleanup_master` method and a
-  :property:`avocado.utils.ssh.Session.control_master` property.
+* :class:`afutils.ssh.Session` now contains a
+  :meth:`afutils.ssh.Session.cleanup_master` method and a
+  :property:`afutils.ssh.Session.control_master` property.
 
 Internal Changes
 ================

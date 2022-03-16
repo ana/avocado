@@ -18,7 +18,8 @@
 
 import unittest.mock
 
-from avocado.utils import service
+from afutils import service
+
 from selftests.utils import setup_avocado_loggers
 
 setup_avocado_loggers()

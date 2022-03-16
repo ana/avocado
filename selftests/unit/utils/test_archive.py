@@ -4,7 +4,8 @@ import sys
 import tempfile
 import unittest
 
-from avocado.utils import archive, crypto, data_factory
+from afutils import archive, crypto, data_factory
+
 from selftests.utils import BASEDIR, temp_dir_prefix
 
 

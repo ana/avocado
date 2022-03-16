@@ -2,7 +2,8 @@ import glob
 import os
 import unittest
 
-from avocado.utils import process
+from afutils import process
+
 from selftests.utils import AVOCADO, BASEDIR, TestCaseTmpDir
 
 

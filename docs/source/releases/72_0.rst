@@ -12,7 +12,7 @@ Users/Test Writers
 ==================
 
 * The new ``vmimage`` command allows a user to list the virtual
-  machine images downloaded by means of :mod:`avocado.utils.vmimage`
+  machine images downloaded by means of :mod:`afutils.vmimage`
   or download new images via the ``avocado vmimage get`` command.
 
 * The tags feature (see :ref:`categorizing-tests`) now supports an
@@ -29,27 +29,27 @@ Bug Fixes
 =========
 
 * A bug introduced in version 71.0 rendered
-  :mod:`avocado.utils.archive` incapable of handling LZMA (also known
+  :mod:`afutils.archive` incapable of handling LZMA (also known
   as ``xz``) archives was fixed.
 
 * A Python 3 (bytes versus text) related issue with
-  :func:`avocado.utils.cpu.get_cpu_vendor_name` has been fixed.
+  :func:`afutils.cpu.get_cpu_vendor_name` has been fixed.
 
 Utility APIs
 ============
 
-* :mod:`avocado.utils.ssh` now allows password based authentication,
+* :mod:`afutils.ssh` now allows password based authentication,
   in addition to public key based authentication.
 
-* :func:`avocado.utils.path.usable_ro_dir` will no longer create a
+* :func:`afutils.path.usable_ro_dir` will no longer create a
   directory, but will just check for its existence and the right
   level of access.
 
-* :func:`avocado.utils.archive.compress` and
-  :func:`avocado.utils.archive.uncompress` and now supports LZMA
+* :func:`afutils.archive.compress` and
+  :func:`afutils.archive.uncompress` and now supports LZMA
   compressed files transparently.
 
-* The :mod:`avocado.utils.vmimage` now has providers for the CirrOS
+* The :mod:`afutils.vmimage` now has providers for the CirrOS
   cloud images.
 
 Internal Changes

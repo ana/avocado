@@ -1,6 +1,6 @@
 import unittest.mock
 
-from avocado.utils import memory
+from afutils import memory
 
 
 class Test(unittest.TestCase):
@@ -10,7 +10,7 @@ class Test(unittest.TestCase):
         expected_values = [[0], [1, 2, 3], [0, 1, 12, 13, 14]]
         for value, exp in zip(file_values, expected_values):
             with unittest.mock.patch('os.path.exists', return_value=True):
-                with unittest.mock.patch('avocado.utils.genio.read_file',
+                with unittest.mock.patch('afutils.genio.read_file',
                                          return_value=value):
                     self.assertEqual(memory.numa_nodes_with_memory(), exp)
 
@@ -21,7 +21,7 @@ Node 0, zone    DMA32    987    679   1004   3068   2795   1432
 Node 1, zone   Normal   5430   9759   9044   9751  16482   8924""")
 
 
-@unittest.mock.patch('avocado.utils.memory._get_buddy_info_content',
+@unittest.mock.patch('afutils.memory._get_buddy_info_content',
                      return_value=BUDDY_INFO_RESPONSE)
 class GetBuddyInfo(unittest.TestCase):
 

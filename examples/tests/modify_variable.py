@@ -1,8 +1,9 @@
 import os
 import shutil
 
+from afutils import build, gdb
+
 from avocado import Test
-from avocado.utils import build, gdb
 
 
 class PrintVariableTest(Test):

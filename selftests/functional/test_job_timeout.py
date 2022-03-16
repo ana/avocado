@@ -3,8 +3,9 @@ import os
 import unittest
 import xml.dom.minidom
 
+from afutils import genio, process, script
+
 from avocado.core import exit_codes
-from avocado.utils import genio, process, script
 from selftests.utils import (AVOCADO, BASEDIR, TestCaseTmpDir,
                              skipOnLevelsInferiorThan)
 

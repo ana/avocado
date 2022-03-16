@@ -2,8 +2,9 @@ import glob
 import os
 import unittest
 
+from afutils import process
+
 from avocado.core import exit_codes
-from avocado.utils import process
 from selftests.utils import AVOCADO, TestCaseTmpDir
 
 

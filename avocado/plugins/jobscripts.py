@@ -1,10 +1,11 @@
 import os
 
+from afutils import process
+
 from avocado.core.output import LOG_UI
 from avocado.core.plugin_interfaces import Init, JobPost, JobPre
 from avocado.core.settings import settings
 from avocado.core.utils.path import prepend_base_path
-from avocado.utils import process
 
 
 class JobScriptsInit(Init):

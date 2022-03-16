@@ -20,13 +20,14 @@ import os
 import string
 from xml.dom.minidom import Document
 
+from afutils import astring
+from afutils.data_structures import DataSize
+
 from avocado.core.output import LOG_UI
 from avocado.core.parser import FileOrStdoutAction
 from avocado.core.plugin_interfaces import CLI, Init, Result
 from avocado.core.settings import settings
 from avocado.core.test_id import TestID
-from avocado.utils import astring
-from avocado.utils.data_structures import DataSize
 
 
 class XUnitResult(Result):

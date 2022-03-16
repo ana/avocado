@@ -3,9 +3,10 @@ import tempfile
 import unittest.mock
 from urllib.error import URLError
 
+from afutils import vmimage as vmimage_util
+
 from avocado.core.settings import Settings
 from avocado.plugins import vmimage as vmimage_plugin
-from avocado.utils import vmimage as vmimage_util
 from selftests.functional.plugin.test_vmimage import (create_metadata_file,
                                                       missing_binary)
 from selftests.utils import skipOnLevelsInferiorThan, temp_dir_prefix
@@ -89,7 +90,7 @@ class VMImagePlugin(unittest.TestCase):
         config_file.close()
         return base_dir, mapping, config_file.name
 
-    @unittest.mock.patch('avocado.utils.vmimage.urlopen')
+    @unittest.mock.patch('afutils.vmimage.urlopen')
     def _create_test_files(self, urlopen_mock):
         with unittest.mock.patch('avocado.core.data_dir.settings', self.stg):
             expected_images = [{'name': 'Fedora', 'file': 'Fedora-Cloud-Base-{version}-{build}.{arch}.qcow2',
@@ -130,7 +131,7 @@ class VMImagePlugin(unittest.TestCase):
 
     def test_list_downloaded_images(self):
         with unittest.mock.patch('avocado.core.data_dir.settings', self.stg):
-            with unittest.mock.patch('avocado.utils.vmimage.ImageProviderBase.get_version'):
+            with unittest.mock.patch('afutils.vmimage.ImageProviderBase.get_version'):
                 images = sorted(vmimage_plugin.list_downloaded_images(), key=lambda i: i['name'])
                 for index, image in enumerate(images):
                     for key in image:

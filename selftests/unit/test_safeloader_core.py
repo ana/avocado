@@ -4,9 +4,10 @@ import unittest
 import unittest.mock
 from collections import OrderedDict
 
+from afutils import script
+
 from avocado.core.safeloader.core import (find_avocado_tests,
                                           find_python_unittests)
-from avocado.utils import script
 from selftests.utils import TestCaseTmpDir, setup_avocado_loggers
 
 setup_avocado_loggers()

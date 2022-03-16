@@ -2,7 +2,8 @@ import os
 import sys
 import unittest
 
-from avocado.utils import process, script
+from afutils import process, script
+
 from selftests.utils import BASEDIR, TestCaseTmpDir
 
 UNITTEST_GOOD = """from avocado import Test

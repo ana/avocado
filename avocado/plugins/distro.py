@@ -17,13 +17,14 @@ import json
 import os
 import sys
 
+from afutils import distro as utils_distro
+from afutils import path as utils_path
+from afutils import process
+
 from avocado.core import exit_codes
 from avocado.core.output import LOG_UI
 from avocado.core.plugin_interfaces import CLICmd
 from avocado.core.settings import settings
-from avocado.utils import distro as utils_distro
-from avocado.utils import path as utils_path
-from avocado.utils import process
 
 
 class SoftwarePackage:

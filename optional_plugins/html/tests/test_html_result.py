@@ -4,8 +4,9 @@ import tempfile
 import unittest
 from xml.dom import minidom
 
+from afutils import genio, process
+
 from avocado.core import exit_codes
-from avocado.utils import genio, process
 from selftests.utils import AVOCADO
 
 

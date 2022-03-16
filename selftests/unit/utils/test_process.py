@@ -5,7 +5,8 @@ import sys
 import time
 import unittest.mock
 
-from avocado.utils import path, process, script
+from afutils import path, process, script
+
 from selftests.utils import (setup_avocado_loggers, skipOnLevelsInferiorThan,
                              skipUnlessPathExists)
 
@@ -39,11 +40,11 @@ while time.monotonic() < end:
 
 class TestSubProcess(unittest.TestCase):
 
-    @unittest.mock.patch('avocado.utils.process.SubProcess._init_subprocess')
-    @unittest.mock.patch('avocado.utils.process.SubProcess.is_sudo_enabled')
-    @unittest.mock.patch('avocado.utils.process.SubProcess.get_pid')
-    @unittest.mock.patch('avocado.utils.process.get_children_pids')
-    @unittest.mock.patch('avocado.utils.process.run')
+    @unittest.mock.patch('afutils.process.SubProcess._init_subprocess')
+    @unittest.mock.patch('afutils.process.SubProcess.is_sudo_enabled')
+    @unittest.mock.patch('afutils.process.SubProcess.get_pid')
+    @unittest.mock.patch('afutils.process.get_children_pids')
+    @unittest.mock.patch('afutils.process.run')
     def test_send_signal_sudo_enabled(self, run, get_children, get_pid, sudo, _):
         signal = 1
         pid = 122
@@ -60,11 +61,11 @@ class TestSubProcess(unittest.TestCase):
                  unittest.mock.call(kill_cmd % (signal, pid), sudo=True)]
         run.assert_has_calls(calls)
 
-    @unittest.mock.patch('avocado.utils.process.SubProcess._init_subprocess')
-    @unittest.mock.patch('avocado.utils.process.SubProcess.is_sudo_enabled')
-    @unittest.mock.patch('avocado.utils.process.SubProcess.get_pid')
-    @unittest.mock.patch('avocado.utils.process.get_children_pids')
-    @unittest.mock.patch('avocado.utils.process.run')
+    @unittest.mock.patch('afutils.process.SubProcess._init_subprocess')
+    @unittest.mock.patch('afutils.process.SubProcess.is_sudo_enabled')
+    @unittest.mock.patch('afutils.process.SubProcess.get_pid')
+    @unittest.mock.patch('afutils.process.get_children_pids')
+    @unittest.mock.patch('afutils.process.run')
     def test_send_signal_sudo_enabled_with_exception(self, run, get_children,
                                                      get_pid, sudo, _):
         signal = 1
@@ -83,9 +84,9 @@ class TestSubProcess(unittest.TestCase):
                  unittest.mock.call(kill_cmd % (signal, pid), sudo=True)]
         run.assert_has_calls(calls)
 
-    @unittest.mock.patch('avocado.utils.process.SubProcess._init_subprocess')
-    @unittest.mock.patch('avocado.utils.process.SubProcess.get_pid')
-    @unittest.mock.patch('avocado.utils.process.get_owner_id')
+    @unittest.mock.patch('afutils.process.SubProcess._init_subprocess')
+    @unittest.mock.patch('afutils.process.SubProcess.get_pid')
+    @unittest.mock.patch('afutils.process.get_owner_id')
     def test_get_user_id(self, get_owner, get_pid, _):
         user_id = 1
         process_id = 123
@@ -97,9 +98,9 @@ class TestSubProcess(unittest.TestCase):
         self.assertEqual(subprocess.get_user_id(), user_id)
         get_owner.assert_called_with(process_id)
 
-    @unittest.mock.patch('avocado.utils.process.SubProcess._init_subprocess')
-    @unittest.mock.patch('avocado.utils.process.SubProcess.get_pid')
-    @unittest.mock.patch('avocado.utils.process.get_owner_id')
+    @unittest.mock.patch('afutils.process.SubProcess._init_subprocess')
+    @unittest.mock.patch('afutils.process.SubProcess.get_pid')
+    @unittest.mock.patch('afutils.process.get_owner_id')
     def test_is_sudo_enabled_false(self, get_owner, get_pid, _):
         user_id = 1
         process_id = 123
@@ -111,9 +112,9 @@ class TestSubProcess(unittest.TestCase):
         self.assertFalse(subprocess.is_sudo_enabled())
         get_owner.assert_called_with(process_id)
 
-    @unittest.mock.patch('avocado.utils.process.SubProcess._init_subprocess')
-    @unittest.mock.patch('avocado.utils.process.SubProcess.get_pid')
-    @unittest.mock.patch('avocado.utils.process.get_owner_id')
+    @unittest.mock.patch('afutils.process.SubProcess._init_subprocess')
+    @unittest.mock.patch('afutils.process.SubProcess.get_pid')
+    @unittest.mock.patch('afutils.process.get_owner_id')
     def test_is_sudo_enabled_true(self, get_owner, get_pid, _):
         user_id = 0
         process_id = 123
@@ -353,8 +354,8 @@ class MiscProcessTests(unittest.TestCase):
         '''
         self.assertGreaterEqual(len(process.get_children_pids(os.getppid())), 1)
 
-    @unittest.mock.patch('avocado.utils.process.os.kill')
-    @unittest.mock.patch('avocado.utils.process.get_owner_id')
+    @unittest.mock.patch('afutils.process.os.kill')
+    @unittest.mock.patch('afutils.process.get_owner_id')
     def test_safe_kill(self, owner_mocked, kill_mocked):
         owner_id = 1
         process_id = 123
@@ -365,8 +366,8 @@ class MiscProcessTests(unittest.TestCase):
         self.assertTrue(killed)
         kill_mocked.assert_called_with(process_id, signal)
 
-    @unittest.mock.patch('avocado.utils.process.os.kill')
-    @unittest.mock.patch('avocado.utils.process.get_owner_id')
+    @unittest.mock.patch('afutils.process.os.kill')
+    @unittest.mock.patch('afutils.process.get_owner_id')
     def test_safe_kill_with_exception(self, owner_mocked, kill_mocked):
         owner_id = 1
         process_id = 123
@@ -378,8 +379,8 @@ class MiscProcessTests(unittest.TestCase):
         self.assertFalse(killed)
         kill_mocked.assert_called_with(process_id, signal)
 
-    @unittest.mock.patch('avocado.utils.process.run')
-    @unittest.mock.patch('avocado.utils.process.get_owner_id')
+    @unittest.mock.patch('afutils.process.run')
+    @unittest.mock.patch('afutils.process.get_owner_id')
     def test_safe_kill_sudo_enabled(self, owner_mocked, run_mocked):
         owner_id = 0
         process_id = 123
@@ -391,8 +392,8 @@ class MiscProcessTests(unittest.TestCase):
         self.assertTrue(killed)
         run_mocked.assert_called_with(expected_cmd, sudo=True)
 
-    @unittest.mock.patch('avocado.utils.process.run')
-    @unittest.mock.patch('avocado.utils.process.get_owner_id')
+    @unittest.mock.patch('afutils.process.run')
+    @unittest.mock.patch('afutils.process.get_owner_id')
     def test_safe_kill_sudo_enabled_with_exception(self, owner_mocked, run_mocked):
         owner_id = 0
         process_id = 123
@@ -405,7 +406,7 @@ class MiscProcessTests(unittest.TestCase):
         self.assertFalse(killed)
         run_mocked.assert_called_with(expected_cmd, sudo=True)
 
-    @unittest.mock.patch('avocado.utils.process.os.stat')
+    @unittest.mock.patch('afutils.process.os.stat')
     def test_process_get_owner_id(self, stat_mock):
         process_id = 123
         owner_user_id = 13
@@ -416,7 +417,7 @@ class MiscProcessTests(unittest.TestCase):
         self.assertEqual(returned_owner_id, owner_user_id)
         stat_mock.assert_called_with('/proc/%d/' % process_id)
 
-    @unittest.mock.patch('avocado.utils.process.os.stat')
+    @unittest.mock.patch('afutils.process.os.stat')
     def test_process_get_owner_id_with_pid_not_found(self, stat_mock):
         process_id = 123
         stat_mock.side_effect = OSError()
@@ -426,9 +427,9 @@ class MiscProcessTests(unittest.TestCase):
         self.assertIsNone(returned_owner_id)
         stat_mock.assert_called_with('/proc/%d/' % process_id)
 
-    @unittest.mock.patch('avocado.utils.process.time.sleep')
-    @unittest.mock.patch('avocado.utils.process.safe_kill')
-    @unittest.mock.patch('avocado.utils.process.get_children_pids')
+    @unittest.mock.patch('afutils.process.time.sleep')
+    @unittest.mock.patch('afutils.process.safe_kill')
+    @unittest.mock.patch('afutils.process.get_children_pids')
     def test_kill_process_tree_nowait(self, get_children_pids, safe_kill,
                                       sleep):
         safe_kill.return_value = True
@@ -436,11 +437,11 @@ class MiscProcessTests(unittest.TestCase):
         self.assertEqual([1], process.kill_process_tree(1))
         self.assertEqual(sleep.call_count, 0)
 
-    @unittest.mock.patch('avocado.utils.process.safe_kill')
-    @unittest.mock.patch('avocado.utils.process.get_children_pids')
-    @unittest.mock.patch('avocado.utils.process.time.time')
-    @unittest.mock.patch('avocado.utils.process.time.sleep')
-    @unittest.mock.patch('avocado.utils.process.pid_exists')
+    @unittest.mock.patch('afutils.process.safe_kill')
+    @unittest.mock.patch('afutils.process.get_children_pids')
+    @unittest.mock.patch('afutils.process.time.time')
+    @unittest.mock.patch('afutils.process.time.sleep')
+    @unittest.mock.patch('afutils.process.pid_exists')
     def test_kill_process_tree_timeout_3s(self, pid_exists, sleep, p_time,
                                           get_children_pids, safe_kill):
         safe_kill.return_value = True
@@ -453,11 +454,11 @@ class MiscProcessTests(unittest.TestCase):
                           timeout=3)
         self.assertLess(p_time.call_count, 10)
 
-    @unittest.mock.patch('avocado.utils.process.safe_kill')
-    @unittest.mock.patch('avocado.utils.process.get_children_pids')
-    @unittest.mock.patch('avocado.utils.process.time.time')
-    @unittest.mock.patch('avocado.utils.process.time.sleep')
-    @unittest.mock.patch('avocado.utils.process.pid_exists')
+    @unittest.mock.patch('afutils.process.safe_kill')
+    @unittest.mock.patch('afutils.process.get_children_pids')
+    @unittest.mock.patch('afutils.process.time.time')
+    @unittest.mock.patch('afutils.process.time.sleep')
+    @unittest.mock.patch('afutils.process.pid_exists')
     def test_kill_process_tree_dont_timeout_3s(self, pid_exists, sleep,
                                                p_time, get_children_pids,
                                                safe_kill):
@@ -469,10 +470,10 @@ class MiscProcessTests(unittest.TestCase):
         self.assertEqual([76], process.kill_process_tree(76, timeout=3))
         self.assertLess(p_time.call_count, 10)
 
-    @unittest.mock.patch('avocado.utils.process.safe_kill')
-    @unittest.mock.patch('avocado.utils.process.get_children_pids')
-    @unittest.mock.patch('avocado.utils.process.time.sleep')
-    @unittest.mock.patch('avocado.utils.process.pid_exists')
+    @unittest.mock.patch('afutils.process.safe_kill')
+    @unittest.mock.patch('afutils.process.get_children_pids')
+    @unittest.mock.patch('afutils.process.time.sleep')
+    @unittest.mock.patch('afutils.process.pid_exists')
     def test_kill_process_tree_dont_timeout_infinity(self, pid_exists, sleep,
                                                      get_children_pids,
                                                      safe_kill):
@@ -486,9 +487,9 @@ class MiscProcessTests(unittest.TestCase):
         self.assertEqual(pid_exists.call_count, 6)
         self.assertEqual(sleep.call_count, 5)
 
-    @unittest.mock.patch('avocado.utils.process.time.sleep')
-    @unittest.mock.patch('avocado.utils.process.safe_kill')
-    @unittest.mock.patch('avocado.utils.process.get_children_pids')
+    @unittest.mock.patch('afutils.process.time.sleep')
+    @unittest.mock.patch('afutils.process.safe_kill')
+    @unittest.mock.patch('afutils.process.get_children_pids')
     def test_kill_process_tree_children(self, get_children_pids, safe_kill,
                                         sleep):
         safe_kill.return_value = True
@@ -680,7 +681,7 @@ class GetCapabilities(unittest.TestCase):
                     'cap_setpcap', 'cap_net_bind_service', 'cap_net_raw',
                     'cap_sys_chroot', 'cap_mknod', 'cap_audit_write',
                     'cap_setfcap=eip']
-        with unittest.mock.patch('avocado.utils.process.run',
+        with unittest.mock.patch('afutils.process.run',
                                  return_value=cmd_result):
             capabilities = process.get_capabilities()
         self.assertEqual(capabilities, expected)
@@ -701,7 +702,7 @@ class GetCapabilities(unittest.TestCase):
                     'cap_audit_control', 'cap_setfcap', 'cap_mac_override',
                     'cap_mac_admin', 'cap_syslog', 'cap_wake_alarm',
                     'cap_block_suspend', 'cap_audit_read', '38', '39+ep']
-        with unittest.mock.patch('avocado.utils.process.run',
+        with unittest.mock.patch('afutils.process.run',
                                  return_value=cmd_result):
             capabilities = process.get_capabilities()
         self.assertEqual(capabilities, expected)
@@ -709,7 +710,7 @@ class GetCapabilities(unittest.TestCase):
     def test_failure_no_capabilities(self):
         stdout = b"1: cap_chown,cap_dac_override"
         cmd_result = process.CmdResult(stdout=stdout, exit_status=1)
-        with unittest.mock.patch('avocado.utils.process.run',
+        with unittest.mock.patch('afutils.process.run',
                                  return_value=cmd_result):
             capabilities = process.get_capabilities()
         self.assertEqual(capabilities, [])

@@ -1,7 +1,8 @@
 import json
 import os
 
-from avocado.utils import process, script
+from afutils import process, script
+
 from selftests.utils import AVOCADO, TestCaseTmpDir
 
 TEST_LOGDIR = """from avocado import Test

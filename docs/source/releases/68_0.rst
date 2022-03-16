@@ -28,12 +28,12 @@ Users/Test Writers
   Ant and Maven.  The specific change was to format the time field
   with 3 decimal places.
 
-* A new :func:`avocado.utils.cpu.get_pid_cpus` utility function allows
+* A new :func:`afutils.cpu.get_pid_cpus` utility function allows
   one to get all the CPUs being used by a given process and its
   threads.
 
-* The :mod:`avocado.utils.process` module now exposes the ``timeout``
-  parameter to users of the :class:`avocado.utils.process.SubProcess`
+* The :mod:`afutils.process` module now exposes the ``timeout``
+  parameter to users of the :class:`afutils.process.SubProcess`
   class.  It allows users to define a timeout, and the type of signal
   that will be used to attempt to kill the process after the timeout
   is reached.
@@ -63,20 +63,20 @@ Bug Fixes
   any longer, as this is a packaging and/or installation step, and not
   an Avocado test runner runtime step.
 
-* The :mod:`avocado.utils.ssh` module would not properly establish
+* The :mod:`afutils.ssh` module would not properly establish
   master sessions due to the lack of a ``ControlPath`` option.
 
 * A possible infinite hang of the test runner, due to a miscalculation
   of the timeout, was fixed.
 
-* The :func:`avocado.utils.archive.extract_lzma` now properly opens
+* The :func:`afutils.archive.extract_lzma` now properly opens
   files in binary mode.
 
 Internal Changes
 ================
 
 * An optimization and robustness improvement on the
-  func:`avocado.utils.memory.read_from_meminfo` was added.
+  func:`afutils.memory.read_from_meminfo` was added.
 
 * The required version of the PyYAML library has been updated to 4.2b2
   because of CVE-2017-18342.  Even though Avocado doesn't use the
@@ -97,7 +97,7 @@ Internal Changes
 * A fix was added to selftests/unit/test_utils_vmimage.py to not
   depend or assume a given host architecture.
 
-* The :class:`avocado.utils.ssh.Session` will now perform a more
+* The :class:`afutils.ssh.Session` will now perform a more
   extensive check for an usable master connection, instead of relying
   on just the SSH process status code.
 

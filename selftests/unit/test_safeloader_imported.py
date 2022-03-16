@@ -195,19 +195,19 @@ class Importable(unittest.TestCase):
         self.assertTrue(imported_symbol.is_importable())
 
     def test_compound(self):
-        imported_symbol = ImportedSymbol("avocado.utils",
+        imported_symbol = ImportedSymbol("afutils",
                                          "software_manager",
                                          __file__)
         self.assertTrue(imported_symbol.is_importable(True))
 
     def test_compound_dont_know_if_symbol_is_module(self):
-        imported_symbol = ImportedSymbol("avocado.utils",
+        imported_symbol = ImportedSymbol("afutils",
                                          "BaseClass",
                                          __file__)
         self.assertTrue(imported_symbol.is_importable(False))
 
     def test_non_existing_module(self):
-        imported_symbol = ImportedSymbol("avocado.utils",
+        imported_symbol = ImportedSymbol("afutils",
                                          "non_existing_symbol",
                                          __file__)
         self.assertFalse(imported_symbol.is_importable(True))
@@ -218,7 +218,7 @@ class Importable(unittest.TestCase):
         self.assertFalse(imported_symbol.is_importable())
 
     def test_non_existing_module_path(self):
-        imported_symbol = ImportedSymbol("avocado.utils.non_existing",
+        imported_symbol = ImportedSymbol("afutils.non_existing",
                                          "",
                                          __file__)
         self.assertFalse(imported_symbol.is_importable())

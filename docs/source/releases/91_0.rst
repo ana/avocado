@@ -64,9 +64,9 @@ Bug Fixes
 =========
 
 * The extraction of DEB packages by means of
-  :func:`avocado.utils.software_manager.SoftwareManager.extract_from_package`
+  :func:`afutils.software_manager.SoftwareManager.extract_from_package`
   was fixed and does not depend on ``ar`` utility anymore (as it now
-  uses the :mod:`avocado.utils.ar` module).
+  uses the :mod:`afutils.ar` module).
 
 * The ``--store-logging-stream`` parameter value was being incorrectly
   parsed as a list of characters. If a ``bar`` value is given, it
@@ -95,27 +95,27 @@ Bug Fixes
 Utility APIs
 ============
 
-* :class:`avocado.utils.network.interfaces.NetworkInterface` can now
+* :class:`afutils.network.interfaces.NetworkInterface` can now
   access and present information on interfaces that do not have an IP
   address assigned to them.
 
-* :mod:`avocado.utils.distro` can now detect the distribution on
+* :mod:`afutils.distro` can now detect the distribution on
   remote machines.
 
-* A new :mod:`avocado.utils.ar` module was introduced that allows
+* A new :mod:`afutils.ar` module was introduced that allows
   extraction of UNIX ``ar`` archive contents.
 
-* A new :mod:`avocado.utils.sysinfo` module that powers the
+* A new :mod:`afutils.sysinfo` module that powers the
   ``sysinfo`` feature, but is now also accessible to job/test writers.
 
 * Times related to the duration of tasks are now limited to nanosecond
   precision to improve readability.
 
-* The :mod:`avocado.utils.distro` will now correctly return a
-  :data:`avocado.utils.distro.UNKNOWN_DISTRO` on non UNIX systems,
+* The :mod:`afutils.distro` will now correctly return a
+  :data:`afutils.distro.UNKNOWN_DISTRO` on non UNIX systems,
   instead of crashing.
 
-* The :mod:`avocado.utils.network.hosts` won't consider anymore
+* The :mod:`afutils.network.hosts` won't consider anymore
   ``bonding_masters``, a file that may exist at ``/sys/class/net``, as
   the name of an interface.
 

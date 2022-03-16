@@ -8,8 +8,9 @@ import tempfile
 import unittest
 import warnings
 
+from afutils import process
+
 from avocado.core import exit_codes
-from avocado.utils import process
 from selftests.utils import AVOCADO, get_temporary_config
 
 TEST_TEMPLATE = r"""

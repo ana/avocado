@@ -1,9 +1,10 @@
 import stat
 import unittest
 
+from afutils import script
+
 from avocado.core import loader, tags
 from avocado.core.nrunner import Runnable
-from avocado.utils import script
 
 #: What is commonly known as "0664" or "u=rw,g=rw,o=r"
 DEFAULT_NON_EXEC_MODE = (stat.S_IRUSR | stat.S_IWUSR |

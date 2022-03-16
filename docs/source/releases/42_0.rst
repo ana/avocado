@@ -29,7 +29,7 @@ Users/Test Writers
  * It's now possible to disable plugins by using the configuration file.
    This is documented at `disabling-a-plugin`.
 
- * :mod:`avocado.utils.iso9660`: this utils module received a lot of
+ * :mod:`afutils.iso9660`: this utils module received a lot of
    TLC and it now provides a more complete standard API across all
    backend implementations.  Previously, only the mount based backend
    implementation would support the `mnt_dir` API, which would point
@@ -37,12 +37,12 @@ Users/Test Writers
    available.  Now all other backends can support that API, given that
    requirements (such as having the right privileges) are met.
 
- * Users of the :mod:`avocado.utils.process` module will now be able
+ * Users of the :mod:`afutils.process` module will now be able
    to access the process ID in the
-   :class:`avocado.utils.process.CmdResult`
+   :class:`afutils.process.CmdResult`
 
- * Users of the :mod:`avocado.utils.build` module will find an
-   improved version of :func:`avocado.utils.build.make` which will now
+ * Users of the :mod:`afutils.build` module will find an
+   improved version of :func:`afutils.build.make` which will now
    return the `make` process exit status code.
 
  * Users of the virtual machine plugin (``--vm-domain`` and related
@@ -85,7 +85,7 @@ Bugfixes
  * An issue where `KeyboardInterrupts` would be caught by the
    `journalctl` run as part of sysinfo was fixed with a workaround.
    The root cause appears to be located in the
-   :mod:`avocado.utils.process` library, and a task is already on
+   :mod:`afutils.process` library, and a task is already on
    track to verify that possible bug.
 
  * :mod:`avocado.util.git` module had an issue where git executions

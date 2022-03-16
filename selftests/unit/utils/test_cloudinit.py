@@ -4,7 +4,8 @@ import tempfile
 import threading
 import unittest.mock
 
-from avocado.utils import cloudinit, data_factory, iso9660
+from afutils import cloudinit, data_factory, iso9660
+
 from selftests.utils import setup_avocado_loggers, temp_dir_prefix
 
 setup_avocado_loggers()
@@ -17,7 +18,7 @@ def has_iso_create_write():
 class CloudInit(unittest.TestCase):
 
     def test_iso_no_create_write(self):
-        with unittest.mock.patch('avocado.utils.iso9660.iso9660', return_value=None):
+        with unittest.mock.patch('afutils.iso9660.iso9660', return_value=None):
             self.assertRaises(RuntimeError, cloudinit.iso, os.devnull, "INSTANCE_ID")
 
 

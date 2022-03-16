@@ -2,7 +2,8 @@ import os
 import sys
 import unittest
 
-from avocado.utils import process
+from afutils import process
+
 from selftests.utils import BASEDIR
 
 RUNNER = "%s -m avocado.core.runners.requirement_asset" % sys.executable

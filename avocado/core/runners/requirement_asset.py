@@ -1,10 +1,11 @@
 import time
 from multiprocessing import Process, SimpleQueue
 
+from afutils import data_structures
+from afutils.asset import Asset
+
 from avocado.core import nrunner
 from avocado.core.settings import settings
-from avocado.utils import data_structures
-from avocado.utils.asset import Asset
 
 
 class RequirementAssetRunner(nrunner.BaseRunner):

@@ -22,10 +22,11 @@ import re
 import sys
 import traceback
 
+from afutils import path as utils_path
+
 from avocado.core import exit_codes
 from avocado.core.settings import settings
 from avocado.core.streams import BUILTIN_STREAMS
-from avocado.utils import path as utils_path
 
 #: Handle cases of logging exceptions which will lead to recursion error
 logging.raiseExceptions = False

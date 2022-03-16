@@ -1,4 +1,4 @@
-avocado.utils.vmimage
+afutils.vmimage
 =====================
 
 This utility provides an API to download/cache VM images (QCOW) from the
@@ -9,7 +9,7 @@ Basic Usage
 
 Import ``vmimage`` module::
 
-    >>> from avocado.utils import vmimage
+    >>> from afutils import vmimage
 
 Get an image, which consists in an object with the path of the downloaded/cached
 base image and the path of the external snapshot created out of that base
@@ -63,7 +63,7 @@ with::
 
     from avocado import Test
 
-    from avocado.utils import vmimage
+    from afutils import vmimage
 
     class MyProvider(vmimage.ImageProviderBase):
 
@@ -99,7 +99,7 @@ with::
         def test(self):
             ...
 
-.. _avocado.utils.vmimage.supported_images:
+.. _afutils.vmimage.supported_images:
 
 Supported images
 ----------------

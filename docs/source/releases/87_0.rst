@@ -45,7 +45,7 @@ Bug Fixes
 Utility APIs
 ============
 
-* The :mod:`avocado.utils.partition` utility module now properly keeps
+* The :mod:`afutils.partition` utility module now properly keeps
   track of loop devices and multiple mounts per device.
 
 Internal Changes

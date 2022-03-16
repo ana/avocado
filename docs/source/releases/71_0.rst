@@ -45,14 +45,14 @@ Users/Test Writers
 * The HTML report now has filtering support by test status, and can
   show all records in the table.
 
-* The :mod:`avocado.utils.runtime` module, a badly designed mechanism
+* The :mod:`afutils.runtime` module, a badly designed mechanism
   for sharing Avocado runtime settings with the utility libraries, has
   been removed.
 
 * The test runner feature that would allow binaries to be run
   transparently inside GDB was removed.  The reason for dropping such
   a feature have to do with how it limits the test runner to run one
-  test at a time, and the use of the :mod:`avocado.utils.runtime`
+  test at a time, and the use of the :mod:`afutils.runtime`
   mechanism, also removed.
 
 * Initial examples for writing custom jobs, using the so called Job
@@ -77,7 +77,7 @@ Bug Fixes
 * The pict plugin (a varianter implementation) now properly yields the
   variants paths as a list.
 
-* A Python 3 related fix to mod:`avocado.utils.software_manager`, that
+* A Python 3 related fix to mod:`afutils.software_manager`, that
   was using Python 2 ``next`` on ``get_source``.
 
 * A Python 3 related fix to the docker plugin, that wasn't caught
@@ -86,20 +86,20 @@ Bug Fixes
 Utility APIs
 ============
 
-* :mod:`avocado.utils.partition` now allows ``mkfs`` and ``mount``
+* :mod:`afutils.partition` now allows ``mkfs`` and ``mount``
   flags to be set.
 
-* :func:`avocado.utils.cpu.get_cpu_vendor_name` now returns the CPU
+* :func:`afutils.cpu.get_cpu_vendor_name` now returns the CPU
   vendor name for POWER9.
 
-* :mod:`avocado.utils.asset` now allows a given location, as well as a
+* :mod:`afutils.asset` now allows a given location, as well as a
   list, to be given, simplifying the most common use case.
 
-* :meth:`avocado.utils.process.SubProcess.stop` now supports setting
+* :meth:`afutils.process.SubProcess.stop` now supports setting
   a timeout.  Please refer to the documentation for the important
   details on its behavior.
 
-* :mod:`avocado.utils.memory` now properly handles hugepages for POWER
+* :mod:`afutils.memory` now properly handles hugepages for POWER
   platform.
 
 Internal Changes

@@ -33,11 +33,11 @@ Users/Test Writers
   downloaded files with the same name (when no hash is given), by
   using a directory named after the hash of the location.
 
-* The identification of PCI bridge devices in :mod:`avocado.utils.pci`
+* The identification of PCI bridge devices in :mod:`afutils.pci`
   is now more precise by using its class.
 
 * A smarter wait, instead of a sleep, is now used on
-  :mod:`avocado.utils.multipath`.
+  :mod:`afutils.multipath`.
 
 Bug Fixes
 =========

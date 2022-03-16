@@ -3,7 +3,7 @@ import re
 import unittest
 from urllib.error import URLError
 
-from avocado.utils import astring, download
+from afutils import astring, download
 
 
 def get_content_by_encoding(url):

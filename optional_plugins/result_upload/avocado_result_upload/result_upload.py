@@ -16,10 +16,11 @@
 Avocado Plugin to propagate Job results to remote host
 """
 
+from afutils import path as utils_path
+from afutils import process
+
 from avocado.core.plugin_interfaces import CLI, Result
 from avocado.core.settings import settings
-from avocado.utils import path as utils_path
-from avocado.utils import process
 
 
 class ResultUpload(Result):

@@ -2,8 +2,9 @@ import os
 import tempfile
 import unittest
 
-from avocado.utils import asset
-from avocado.utils.filelock import FileLock
+from afutils import asset
+from afutils.filelock import FileLock
+
 from selftests.utils import TestCaseTmpDir, setup_avocado_loggers
 
 setup_avocado_loggers()

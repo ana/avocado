@@ -1,8 +1,9 @@
 import json
 import sys
 
+from afutils import process
+
 from avocado import Test, fail_on
-from avocado.utils import process
 
 
 class Interface(Test):

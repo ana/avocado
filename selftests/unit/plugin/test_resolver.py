@@ -2,11 +2,12 @@ import os
 import stat
 import unittest
 
+from afutils import script
+
 from avocado.core import resolver
 from avocado.plugins.resolvers import (AvocadoInstrumentedResolver,
                                        ExecTestResolver,
                                        PythonUnittestResolver)
-from avocado.utils import script
 from selftests.utils import BASEDIR
 
 #: What is commonly known as "0664" or "u=rw,g=rw,o=r"

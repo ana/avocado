@@ -34,11 +34,12 @@ import tempfile
 import time
 import warnings
 
+from afutils import path as utils_path
+from afutils.data_structures import Borg
+
 from avocado.core import exit_codes, job_id
 from avocado.core.output import LOG_JOB, LOG_UI
 from avocado.core.settings import settings
-from avocado.utils import path as utils_path
-from avocado.utils.data_structures import Borg
 
 if 'VIRTUAL_ENV' in os.environ:
     SYSTEM_BASE_DIR = os.environ['VIRTUAL_ENV']

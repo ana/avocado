@@ -27,23 +27,23 @@ Users/Test Writers
   :func:`avocado.Test.get_data() <avocado.core.test.TestData.get_data>`
   instead.
 
-* The :func:`avocado.utils.cpu.set_cpuidle_state` function now takes a
+* The :func:`afutils.cpu.set_cpuidle_state` function now takes a
   boolean value for its ``disable`` parameter (while still allowing
   the previous integer (0/1) values to be used).  The goal is to have
   a more Pythonic interface, and to drop support legacy integer (0/1)
   use in the upcoming releases.
 
-* :data:`avocado.utils.astring.ENCODING` is a new addition, and holds
+* :data:`afutils.astring.ENCODING` is a new addition, and holds
   the encoding used on many other Avocado utilities.  If your test
   needs to convert between binary data and text, we recommend you use
   it as the default encoding (unless your test knows better).
 
-* :func:`avocado.utils.astring.to_text` now supports setting the error
+* :func:`afutils.astring.to_text` now supports setting the error
   handler.  This means that when a perfect decoding is not possible,
   users can choose how to handle it, like, for example, ignoring the
   offending characters.
 
-* When running a process by means of the :mod:`avocado.utils.process`
+* When running a process by means of the :mod:`afutils.process`
   module utilities, the output of such a process is captured and can
   be logged in a ``stdout``/``stderr`` (or combined ``output``) file.
   The logging is now more resilient to decode errors, and will use the
@@ -52,7 +52,7 @@ Users/Test Writers
   what was actually output by the processes if decoding error
   conditions happen.
 
-* The :func:`avocado.utils.astring.tabular_output` will now properly
+* The :func:`afutils.astring.tabular_output` will now properly
   strip trailing whitespace from lines that don't contain data for all
   "columns".  This is also reflected in the (tabular) output of
   commands such as ``avocado list -v``.
@@ -60,25 +60,25 @@ Users/Test Writers
 Bug Fixes
 =========
 
-* Users of the :mod:`avocado.utils.service` module can now safely
+* Users of the :mod:`afutils.service` module can now safely
   instantiate the service manager multiple times.  It was previously
   limited to a single instance per interpreter.
 
-* The :mod:`avocado.utils.vmimage` library default usage broke with
+* The :mod:`afutils.vmimage` library default usage broke with
   the release of Fedora 28, which added a different directory layout
   for its cloud images.  This has now been fixed and should allow for
-  a successful ``image = avocado.utils.vmimage()`` usage.
+  a successful ``image = afutils.vmimage()`` usage.
 
 Internal Changes
 ================
 
-* Refactor of the :mod:`avocado.utils.asset` module, in preparation
+* Refactor of the :mod:`afutils.asset` module, in preparation
   for new functionality.
 
-* The :mod:`avocado.utils.cpu` module now treats reads/writes to/from
+* The :mod:`afutils.cpu` module now treats reads/writes to/from
   ``/proc/*`` and ``/sys/*`` as binary data.
 
-* The selftests for the :mod:`avocado.utils.cpu` module will now run
+* The selftests for the :mod:`afutils.cpu` module will now run
   under Python 3 (>= 3.6), due to more detailed checks of capable
   mock versions.
 

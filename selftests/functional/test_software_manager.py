@@ -1,7 +1,8 @@
 import os
 import unittest
 
-from avocado.utils.software_manager import manager
+from afutils.software_manager import manager
+
 from selftests.utils import BASEDIR, TestCaseTmpDir, skipUnlessPathExists
 
 

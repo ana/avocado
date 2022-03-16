@@ -3,14 +3,15 @@ import shutil
 from urllib.error import HTTPError
 from urllib.request import urlopen
 
+from afutils import process, vmimage
+
 from avocado import Test, fail_on
 from avocado.plugins import vmimage as vmimage_plug
-from avocado.utils import process, vmimage
 
 
 class Base(Test):
     """
-    Tests if avocado.utils.vmimage providers are current and can reach images
+    Tests if afutils.vmimage providers are current and can reach images
 
     :avocado: tags=network
     """

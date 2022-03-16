@@ -55,7 +55,7 @@ Bug Fixes
   run tests.  A functional test has also been aded to avoid a
   regression here.
 
-* The :mod:`avocado.utils.distro` module now properly detects RHEL 8
+* The :mod:`afutils.distro` module now properly detects RHEL 8
   systems.
 
 * The safeloader would fail to identify Python module names when a
@@ -64,10 +64,10 @@ Bug Fixes
   list and run tests that either directly or indirectly imported
   modules containing a relative import such as ``from . import foo``.
 
-* The :mod:`avocado.utils.vmimage` can now find Fedora images for
+* The :mod:`afutils.vmimage` can now find Fedora images for
   s390x.
 
-* The :mod:`avocado.utils.vmimage` now properly makes use of the
+* The :mod:`afutils.vmimage` now properly makes use of the
   build option.
 
 * ``avocado list`` will now show the contents of the "key:val" tags.
@@ -78,16 +78,16 @@ Bug Fixes
 Utility APIs
 ============
 
-* Two simple utility APIs, :func:`avocado.utils.genio.append_file`
-  and :func:`avocado.utils.genio.append_one_line` have been added
+* Two simple utility APIs, :func:`afutils.genio.append_file`
+  and :func:`afutils.genio.append_one_line` have been added
   to the benefit of some `avocado-mist-tests
   <https://github.com/avocado-framework-tests/avocado-misc-tests>`.
 
-* The new :mod:`avocado.utils.datadrainer` provide an easy way to read
+* The new :mod:`afutils.datadrainer` provide an easy way to read
   from and write to various input/output sources without blocking a
   test (by spawning a thread for that).
 
-* The new :mod:`avocado.utils.diff_validator` can help test writers
+* The new :mod:`afutils.diff_validator` can help test writers
   to make sure that given changes have been applied to files.
 
 Internal Changes

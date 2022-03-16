@@ -25,6 +25,8 @@ import sys
 import time
 from queue import Full as queueFullException
 
+from afutils import process, stacktrace, wait
+
 from avocado.core import output, tree, varianter
 from avocado.core.output import LOG_JOB as TEST_LOG
 from avocado.core.output import LOG_UI as APP_LOG
@@ -34,7 +36,6 @@ from avocado.core.test import TimeOutSkipTest
 from avocado.core.test_id import TestID
 from avocado.core.teststatus import STATUSES, STATUSES_MAPPING
 from avocado.core.utils import loader
-from avocado.utils import process, stacktrace, wait
 
 
 class TestRunner(Runner):

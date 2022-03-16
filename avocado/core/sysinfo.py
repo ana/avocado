@@ -16,12 +16,13 @@ import logging
 import os
 import time
 
+from afutils import genio
+from afutils import path as utils_path
+from afutils import sysinfo
+from afutils.software_manager import manager
+
 from avocado.core import output
 from avocado.core.settings import settings
-from avocado.utils import genio
-from avocado.utils import path as utils_path
-from avocado.utils import sysinfo
-from avocado.utils.software_manager import manager
 
 log = logging.getLogger("avocado.sysinfo")
 

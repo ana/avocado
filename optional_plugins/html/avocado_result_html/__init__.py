@@ -24,13 +24,13 @@ import sys
 import time
 
 import jinja2 as jinja
+from afutils import astring
+from afutils.path import find_command
 
 from avocado.core import exit_codes
 from avocado.core.output import LOG_UI
 from avocado.core.plugin_interfaces import CLI, Init, Result
 from avocado.core.settings import settings
-from avocado.utils import astring
-from avocado.utils.path import find_command
 
 
 class ReportModel:

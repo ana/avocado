@@ -59,14 +59,14 @@ Users/Test Writers
 Bug Fixes
 =========
 
-* :meth:`avocado.utils.network.interfaces.NetworkInterface.is_admin_link_up` and
-  :meth:`avocado.utils.network.interfaces.NetworkInterface.is_operational_link_up`
+* :meth:`afutils.network.interfaces.NetworkInterface.is_admin_link_up` and
+  :meth:`afutils.network.interfaces.NetworkInterface.is_operational_link_up`
   now behave properly on interfaces based on bonding.
 
 * The selection of an nrunner based runner, from its Python module
   name/path has been fixed.
 
-* :mod:`avocado.utils.process` utilities that use ``sudo`` would check
+* :mod:`afutils.process` utilities that use ``sudo`` would check
   for executable permissions on the binary.  Many systems will have
   ``sudo`` with the executable bit set, but not the readable bit.  This
   is now accounted for.
@@ -78,27 +78,27 @@ Bug Fixes
 Utility APIs
 ============
 
-* A new module :mod:`avocado.utils.dmesg` with utilities for interacting
+* A new module :mod:`afutils.dmesg` with utilities for interacting
   with the kernel ring buffer messages.
 
-* A new utility :meth:`avocado.utils.linux.is_selinux_enforcing` allows
+* A new utility :meth:`afutils.linux.is_selinux_enforcing` allows
   quick check of SELinux enforcing status.
 
-* The :mod:`avocado.utils.network.interfaces` now support configuration
+* The :mod:`afutils.network.interfaces` now support configuration
   files compatible with SuSE distros.
 
-* :meth:`avocado.utils.network.interfaces.NetworkInterface.remove_link`
+* :meth:`afutils.network.interfaces.NetworkInterface.remove_link`
   is a new utility method that allows one to delete a virtual
   interface link.
 
-* :meth:`avocado.utils.network.hosts.Host.get_default_route_interface`
+* :meth:`afutils.network.hosts.Host.get_default_route_interface`
   is a new utility method that allows one to get a list of default
   routes interfaces.
 
-* The :mod:`avocado.utils.cpu` library now properly handles s390x z13
+* The :mod:`afutils.cpu` library now properly handles s390x z13
   family of CPUs.
 
-* The :mod:`avocado.utils.pmem` library introduced a number of new
+* The :mod:`afutils.pmem` library introduced a number of new
   utility methods, adding support for daxctl operations such as
   offline-memory, online-memory and reconfigure-device.
 

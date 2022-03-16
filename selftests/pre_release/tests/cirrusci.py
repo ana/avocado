@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from avocado.utils import download
+from afutils import download
 
 
 class CirrusCI(unittest.TestCase):

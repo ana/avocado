@@ -2,8 +2,9 @@ import os
 import sys
 import unittest
 
+from afutils import process
+
 from avocado.core.job import Job
-from avocado.utils import process
 from selftests.utils import (AVOCADO, BASEDIR, TestCaseTmpDir,
                              skipUnlessPathExists)
 

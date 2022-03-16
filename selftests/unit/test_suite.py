@@ -1,8 +1,9 @@
 import tempfile
 import unittest.mock
 
+from afutils import path as utils_path
+
 from avocado.core.suite import TestSuite
-from avocado.utils import path as utils_path
 from selftests.utils import setup_avocado_loggers, temp_dir_prefix
 
 setup_avocado_loggers()

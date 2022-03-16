@@ -58,7 +58,7 @@ Utility API compatibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The changes in the utility APIs (those that live under the
-``avocado.utils`` namespace) are too many to present porting
+``afutils`` namespace) are too many to present porting
 suggestions.  Please refer to the :ref:`lts_92_0_utility_apis` section
 for a comprehensive list of changes, including new features your test
 may be able to leverage.
@@ -260,7 +260,7 @@ Users / Test Writers
   executed.  It has support for **package** requirements, meaning
   operating system level packages such as RPM, DEB, etc, and **asset**
   requirements, allowing users to declare any asset obtainable with
-  :mod:`avocado.utils.asset` to be downloaded, cached and thus be
+  :mod:`afutils.asset` to be downloaded, cached and thus be
   available to tests.
 
   This can greatly simplify the setup of the environments the tests
@@ -286,7 +286,7 @@ Users / Test Writers
 
 * Avocado will log a warning, making it clear that it can not check
   the integrity of a requested asset when no hash is given. This is
-  related to users of the :mod:`avocado.utils.asset` module or
+  related to users of the :mod:`afutils.asset` module or
   :meth:`avocado.Test.fetch_asset` utility method.
 
 * Avocado’s cache directory defined in the configuration will now have
@@ -358,9 +358,9 @@ Bug Fixes
   meaningful exit code on some failures and success situations.
 
 * The extraction of DEB packages by means of
-:meth:`avocado.utils.software_manager.SoftwareManager.extract_from_package`
+:meth:`afutils.software_manager.SoftwareManager.extract_from_package`
 was fixed and does not depend on the ``ar`` utility anymore (as it now
-uses the :mod:`avocado.utils.ar` module).
+uses the :mod:`afutils.ar` module).
 
 * The ``--store-logging-stream`` parameter value was being incorrectly
   parsed as a list of characters. If a ``bar`` value is given, it
@@ -373,12 +373,12 @@ uses the :mod:`avocado.utils.ar` module).
   overwritten. Now job name uniqueness is enforced and no test results
   from a suite should be able to overwrite others.
 
-* :meth:`avocado.utils.network.interfaces.NetworkInterface.is_admin_link_up`
+* :meth:`afutils.network.interfaces.NetworkInterface.is_admin_link_up`
   and
-  :meth:`avocado.utils.network.interfaces.NetworkInterface.is_operational_link_up`
+  :meth:`afutils.network.interfaces.NetworkInterface.is_operational_link_up`
   now behave properly on interfaces based on bonding.
 
-* :mod:`avocado.utils.process` utilities that use ``sudo`` would check
+* :mod:`afutils.process` utilities that use ``sudo`` would check
   for executable permissions on the binary. Many systems will have
   sudo with the executable bit set, but not the readable bit. This is
   now accounted for.
@@ -465,7 +465,7 @@ nrunner stabilization
   among other means, the avocado execution exit code.
 
 * When running tests in parallel, multiple downloads of the same image
-  (when using :mod:`avocado.utils.vmimage`) is now prevented by a
+  (when using :mod:`afutils.vmimage`) is now prevented by a
   better (early) locking.
 
 * A condition in which tests running in parallel could collide over
@@ -477,114 +477,114 @@ nrunner stabilization
 Utility APIs
 ------------
 
-* A new :mod:`avocado.utils.ar` module was introduced that allows
+* A new :mod:`afutils.ar` module was introduced that allows
   extraction of UNIX ar archive contents.
 
-* A new :mod:`avocado.utils.sysinfo` module that powers the sysinfo
+* A new :mod:`afutils.sysinfo` module that powers the sysinfo
   feature, but is now also accessible to job/test writers.
 
 * Times related to the duration of tasks are now limited to nanosecond
   precision to improve readability.
 
-* A new module :mod:`avocado.utils.dmesg` with utilities for
+* A new module :mod:`afutils.dmesg` with utilities for
   interacting with the kernel ring buffer messages.
 
-* A new utility :func:`avocado.utils.linux.is_selinux_enforcing`
+* A new utility :func:`afutils.linux.is_selinux_enforcing`
   allows quick check of SELinux enforcing status.
 
-* The :mod:`avocado.utils.pmem` library introduced a number of new
+* The :mod:`afutils.pmem` library introduced a number of new
   utility methods, adding support for daxctl operations such as
   ``offline-memory``, ``online-memory``, and ``reconfigure-device``.
 
-* :meth:`avocado.utils.software_manager.SoftwareManager.extract_from_package`
+* :meth:`afutils.software_manager.SoftwareManager.extract_from_package`
   is a new method that lets users extract the content of supported
   package types (currently RPM and DEB).
 
-* :mod:`avocado.utils.pci` now accommodates newer slot names.
+* :mod:`afutils.pci` now accommodates newer slot names.
 
-* :mod:`avocado.utils.memory` now properly handles the 16GB hugepages
+* :mod:`afutils.memory` now properly handles the 16GB hugepages
   with both the HASH and Radix MMU (by removing the check in case
   Radix is used).
 
-* The :mod:`avocado.utils.cloudinit` module will give a better error
+* The :mod:`afutils.cloudinit` module will give a better error
   message when the system is not capable of creating ISO images, with
   a solution for resolution.
 
 * Various documentation improvements for the
   :mod:`avocado.core.multipath` module.
 
-* The :mod:`avocado.utils.partition` utility module now properly keeps
+* The :mod:`afutils.partition` utility module now properly keeps
   track of loop devices and multiple mounts per device.
 
 * A specific exception, and thus a clearer error message, is now used
   when a command with an empty string is given to
-  :func:`avocado.utils.process.run`.
+  :func:`afutils.process.run`.
 
-:mod:`avocado.utils.ssh`
+:mod:`afutils.ssh`
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* :class:`avocado.utils.ssh.Session` now contains a
-  :meth:`avocado.utils.ssh.Session.cleanup_master` method and a
-  :attr:`avocado.utils.ssh.Session.control_master` property.
+* :class:`afutils.ssh.Session` now contains a
+  :meth:`afutils.ssh.Session.cleanup_master` method and a
+  :attr:`afutils.ssh.Session.control_master` property.
 
-* :mod:`avocado.utils.ssh` now respects the username set when copying
+* :mod:`afutils.ssh` now respects the username set when copying
   files via ``scp``.
 
-:mod:`avocado.utils.vmimage`
+:mod:`afutils.vmimage`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* The :mod:`avocado.utils.vmimage` can now access both current and
+* The :mod:`afutils.vmimage` can now access both current and
   non-current Fedora versions (which are hosted at different
   locations).
 
-* :func:`avocado.utils.vmimage.get` is now deprecated in favor of
-  :meth:`avocado.utils.vmimage.Image.from_parameters`
+* :func:`afutils.vmimage.get` is now deprecated in favor of
+  :meth:`afutils.vmimage.Image.from_parameters`
 
-:mod:`avocado.utils.network`
+:mod:`afutils.network`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* The :mod:`avocado.utils.network.interfaces` now supports setting
+* The :mod:`afutils.network.interfaces` now supports setting
   configuration for SUSE-based systems.
 
-* :class:`avocado.utils.network.interfaces.NetworkInterface` can now
+* :class:`afutils.network.interfaces.NetworkInterface` can now
   access and present information on interfaces that do not have an IP
   address assigned to them.
 
-* The :mod:`avocado.utils.network.hosts` won’t consider
+* The :mod:`afutils.network.hosts` won’t consider
   bonding_masters anymore, a file that may exist at
   ``/sys/class/net``, as the name of an interface.
 
-* The :mod:`avocado.utils.network.interfaces` now support
+* The :mod:`afutils.network.interfaces` now support
   configuration files compatible with SUSE distributions.
 
-* :meth:`avocado.utils.network.interfaces.NetworkInterface.remove_link`
+* :meth:`afutils.network.interfaces.NetworkInterface.remove_link`
   is a new utility method that allows one to delete a virtual
   interface link.
 
-* :meth:`avocado.utils.network.hosts.Host.get_default_route_interface` is a
+* :meth:`afutils.network.hosts.Host.get_default_route_interface` is a
   new utility method that allows one to get a list of default routes
   interfaces.
 
-:mod:`avocado.utils.cpu`
+:mod:`afutils.cpu`
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* The :mod:`avocado.utils.cpu` now makes available mapping of vendor
+* The :mod:`afutils.cpu` now makes available mapping of vendor
   names to the data that matches in ``/proc/cpuinfo`` on that vendor’s
-  CPUs (:attr:`avocado.utils.cpu.VENDORS_MAP`). This allows users to
+  CPUs (:attr:`afutils.cpu.VENDORS_MAP`). This allows users to
   have visibility about the logic used to determine the vendor’s name,
   and overwrite it if needed.
 
-* The :mod:`avocado.utils.cpu` library now properly handles the s390x
+* The :mod:`afutils.cpu` library now properly handles the s390x
   z13 family of CPUs.
 
-:mod:`avocado.utils.distro`
+:mod:`afutils.distro`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* :mod:`avocado.utils.distro: can now detect the distribution on remote
+* :mod:`afutils.distro: can now detect the distribution on remote
   machines.
 
-* The :mod:`avocado.utils.distro: will now correctly return a
-  ``avocado.utils.distro.UNKNOWN_DISTRO`` on non UNIX systems, instead of
+* The :mod:`afutils.distro: will now correctly return a
+  ``afutils.distro.UNKNOWN_DISTRO`` on non UNIX systems, instead of
   crashing.
 
 Complete list of changes

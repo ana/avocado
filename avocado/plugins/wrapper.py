@@ -15,11 +15,12 @@
 import os
 import sys
 
+from afutils import process
+
 from avocado.core import exit_codes
 from avocado.core.output import LOG_UI
 from avocado.core.plugin_interfaces import CLI
 from avocado.core.settings import settings
-from avocado.utils import process
 
 
 class Wrapper(CLI):

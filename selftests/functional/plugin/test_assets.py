@@ -8,9 +8,10 @@ import tempfile
 import unittest
 import warnings
 
+from afutils import process
+from afutils.asset import Asset
+
 from avocado.core import exit_codes
-from avocado.utils import process
-from avocado.utils.asset import Asset
 from selftests.utils import (AVOCADO, TestCaseTmpDir, get_temporary_config,
                              skipUnlessPathExists)
 

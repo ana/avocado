@@ -2,8 +2,9 @@ import json
 import os
 import unittest
 
+from afutils import genio, process, script
+
 from avocado.core import exit_codes
-from avocado.utils import genio, process, script
 from selftests.utils import AVOCADO, TestCaseTmpDir
 
 AVOCADO_TEST_SKIP_DECORATORS = """

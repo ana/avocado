@@ -14,14 +14,14 @@ The major changes introduced on this version are listed below.
   jobs.  For more information on this feature, please check out its
   own documentation at :ref:`job-diff`.
 
-* The :mod:`avocado.utils.process` library has been enhanced by adding
-  the :meth:`avocado.utils.process.SubProcess.get_pid` method, and also by
+* The :mod:`afutils.process` library has been enhanced by adding
+  the :meth:`afutils.process.SubProcess.get_pid` method, and also by
   logging the command name, status and execution time when verbose
   mode is set.
 
 * The introduction of a `rr <http://rr-project.org>`_ based wrapper.
   With such a wrapper, it's possible to transparently record the
-  process state (when executed via the :mod:`avocado.utils.process`
+  process state (when executed via the :mod:`afutils.process`
   APIs), and deterministically replay them later.
 
 * The coredump generation contrib scripts will check if the user
@@ -35,12 +35,12 @@ The major changes introduced on this version are listed below.
 
 * BUGFIX: The use of the asset fetcher by multiple avocado executions
   could result in a race condition.  This is now fixed, backed by a
-  file based utility lock library: :mod:`avocado.utils.filelock`.
+  file based utility lock library: :mod:`afutils.filelock`.
 
 * BUGFIX: The asset fetcher will now properly check the hash on
   ``file:`` based URLs.
 
-* BUGFIX: A busy loop in the :mod:`avocado.utils.process` library that
+* BUGFIX: A busy loop in the :mod:`afutils.process` library that
   was reported by our users was promptly fixed.
 
 * BUGFIX: Attempts to install Avocado on bare bones environments, such

@@ -4,13 +4,14 @@ import logging
 import os
 import subprocess
 
+from afutils import distro
+from afutils.asset import Asset
+from afutils.podman import Podman, PodmanException
+
 from avocado.core.plugin_interfaces import CLI, DeploymentSpawner, Init
 from avocado.core.settings import settings
 from avocado.core.spawners.common import SpawnerMixin, SpawnMethod
 from avocado.core.version import VERSION
-from avocado.utils import distro
-from avocado.utils.asset import Asset
-from avocado.utils.podman import Podman, PodmanException
 
 LOG = logging.getLogger(__name__)
 

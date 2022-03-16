@@ -56,9 +56,9 @@ Bug Fixes
 * The asset fetcher plugin won't crash anymore due to differences in
   the AST based node attributes.
 
-* :class:`avocado.utils.process.FDDrainer` now properly respects the
+* :class:`afutils.process.FDDrainer` now properly respects the
   presence and absence of newlines produced when running new processes
-  via :func:`avocado.utils.process.run` and friends.  This also fixes
+  via :func:`afutils.process.run` and friends.  This also fixes
   tests that relied on the "output check" feature because of missing
   newlines.
 

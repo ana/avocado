@@ -14,7 +14,7 @@ roughly categorized into major topics and intended audience:
 Users/Test Writers
 ==================
 
-* The :mod:`avocado.utils.vmimage` library now contains support for
+* The :mod:`afutils.vmimage` library now contains support for
   Avocado's own JeOS image.  A nice addition given the fact that
   it's the default image used in Avocado-VT and the latest version
   is available in the following architectures: x86_64, aarch64, ppc64,
@@ -43,7 +43,7 @@ Users/Test Writers
 Bug Fixes
 =========
 
-* The :mod:`avocado.utils.software_manager` library received
+* The :mod:`afutils.software_manager` library received
   improvements with regards to downloads of source packages,
   working around bugs in older ``yumdownloader`` versions.
 

@@ -16,13 +16,14 @@ import hashlib
 import os
 import sys
 
+from afutils import path as utils_path
+from afutils import process
+
 from avocado.core import exit_codes
 from avocado.core.output import LOG_UI
 from avocado.core.plugin_interfaces import CLI, Varianter
 from avocado.core.settings import settings
 from avocado.core.tree import TreeNode
-from avocado.utils import path as utils_path
-from avocado.utils import process
 
 
 class VarianterPictCLI(CLI):

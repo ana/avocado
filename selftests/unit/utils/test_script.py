@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from avocado.utils import script
+from afutils import script
 
 
 class TestTemporary(unittest.TestCase):

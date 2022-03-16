@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
 """
-Script that downloads cloud images via avocado.utils.vmimage
+Script that downloads cloud images via afutils.vmimage
 """
 
+from afutils import vmimage
+
 from avocado.core.settings import settings
-from avocado.utils import vmimage
 
 KNOWN_IMAGES = (
     # from https://download.cirros-cloud.net/0.4.0/MD5SUMS

@@ -2,8 +2,9 @@
 
 import os
 
+from afutils import archive, build, process
+
 from avocado import Test
-from avocado.utils import archive, build, process
 
 
 class SyncTest(Test):

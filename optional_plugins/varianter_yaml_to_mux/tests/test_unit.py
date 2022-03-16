@@ -7,10 +7,10 @@ import unittest
 
 import avocado_varianter_yaml_to_mux.varianter_yaml_to_mux as yaml_to_mux
 import yaml
+from afutils import astring
 from avocado_varianter_yaml_to_mux.varianter_yaml_to_mux import mux
 
 from avocado.core import parameters, tree
-from avocado.utils import astring
 
 BASEDIR = os.path.dirname(os.path.abspath(__file__))
 BASEDIR = os.path.abspath(os.path.join(BASEDIR, os.path.pardir))

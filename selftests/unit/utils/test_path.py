@@ -1,13 +1,13 @@
 import os
 import unittest.mock
 
-from avocado.utils import path
+from afutils import path
 
 
 class Path(unittest.TestCase):
 
     def test_check_readable_exists(self):
-        with unittest.mock.patch('avocado.utils.path.os.path.exists',
+        with unittest.mock.patch('afutils.path.os.path.exists',
                                  return_value=False) as mocked_exists:
             with self.assertRaises(OSError) as cm:
                 path.check_readable(os.devnull)
@@ -16,7 +16,7 @@ class Path(unittest.TestCase):
             mocked_exists.assert_called_with(os.devnull)
 
     def test_check_readable_access(self):
-        with unittest.mock.patch('avocado.utils.path.os.access',
+        with unittest.mock.patch('afutils.path.os.access',
                                  return_value=False) as mocked_access:
             with self.assertRaises(OSError) as cm:
                 path.check_readable(os.devnull)

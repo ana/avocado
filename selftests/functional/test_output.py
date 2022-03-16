@@ -6,11 +6,12 @@ import tempfile
 import unittest
 from xml.dom import minidom
 
+from afutils import genio
+from afutils import path as utils_path
+from afutils import process, script
+
 from avocado.core import exit_codes
 from avocado.core.output import TermSupport
-from avocado.utils import genio
-from avocado.utils import path as utils_path
-from avocado.utils import process, script
 from selftests.utils import AVOCADO, TestCaseTmpDir, skipUnlessPathExists
 
 # AVOCADO may contain more than a single command, as it can be
@@ -57,7 +58,7 @@ OUTPUT_TEST_CONTENT = """#!/bin/env python
 import sys
 
 from avocado import Test
-from avocado.utils import process
+from afutils import process
 
 print("top_print")
 sys.stdout.write("top_stdout\\n")
@@ -94,7 +95,7 @@ OUTPUT_MODE_NONE_CONTENT = r"""
 import sys
 
 from avocado import Test
-from avocado.utils import process
+from afutils import process
 
 
 class OutputCheckNone(Test):
@@ -172,7 +173,7 @@ class OutputTest(TestCaseTmpDir):
         res = json.loads(result.stdout_text)
         logfile = res["tests"][0]["logfile"]
         # Today, process.run() calls are not part of the test stdout or stderr.
-        # Instead those are registered as part of avocado.utils.process logging
+        # Instead those are registered as part of afutils.process logging
         # system. Let's just add a "DEBUG| " to make sure this will not get
         # confused with [stdout].
         expected = [b" DEBUG| [stdout] top_process",

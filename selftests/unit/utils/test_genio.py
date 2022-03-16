@@ -4,7 +4,8 @@ import string
 import tempfile
 import unittest
 
-from avocado.utils import genio
+from afutils import genio
+
 from selftests.utils import setup_avocado_loggers, temp_dir_prefix
 
 setup_avocado_loggers()

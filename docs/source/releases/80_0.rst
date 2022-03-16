@@ -97,21 +97,21 @@ Bug Fixes
 * An incorrect configuration key name of the ``result_upload`` command,
   as part of the "results_upload" plugin, was fixed.
 
-* :func:`avocado.utils.disk.get_disks` now supports all block devices,
+* :func:`afutils.disk.get_disks` now supports all block devices,
   like multipaths, LVs, etc. Previously it used to return only
   ``/dev/sdX`` devices.
 
 Utility APIs
 ============
 
-* All of the :class:`avocado.utils.gdb` APIs are now back to a working
+* All of the :class:`afutils.gdb` APIs are now back to a working
   state, with many fixes related to bytes and strings, as well as
   buffered I/O caching fixes.
 
-* :mod:`avocado.utils.pmem` now supports the ``all`` namespace behavior
+* :mod:`afutils.pmem` now supports the ``all`` namespace behavior
   for newer versions of the ``ndctl`` utility.
 
-* :mod:`avocado.utils.software_manager` support for the Zypper package
+* :mod:`afutils.software_manager` support for the Zypper package
   manager was improved to support the installation of package build
   dependencies.
 

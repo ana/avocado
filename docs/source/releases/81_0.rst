@@ -113,12 +113,12 @@ Bug Fixes
 Utility APIs
 ============
 
-* The :mod:`avocado.utils.vmimage` now contains an auxiliary
-  documentation (:ref:`avocado.utils.vmimage.supported_images`) that
+* The :mod:`afutils.vmimage` now contains an auxiliary
+  documentation (:ref:`afutils.vmimage.supported_images`) that
   lists the exact Operating System names, versions and architectures
   that have been tested with an Avocado release.
 
-* The :mod:`avocado.utils.pmem` library can now check if a given
+* The :mod:`afutils.pmem` library can now check if a given
   command is supported by the underlying ``ndctl`` binary.
 
 Internal Changes
@@ -133,7 +133,7 @@ Internal Changes
   ``avocado.core.future.settings`` on previous versions. All module
   and plugins have been migrated to the new API.
 
-* The :mod:`avocado.utils.software_manager` module has been split into
+* The :mod:`afutils.software_manager` module has been split into
   a finer grained directory and module structure.
 
 * Various documentation content improvements, and various build
@@ -145,7 +145,7 @@ Internal Changes
   configuration for the various variants are kept in the configuration
   and it's instantiated when needed.
 
-* :mod:`avocado.utils.wait` now uses :func:`time.monotonic`, which
+* :mod:`afutils.wait` now uses :func:`time.monotonic`, which
   makes it more reliable and less susceptible to errors when the
   system clock changes while this utility function is running.
 

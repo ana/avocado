@@ -1,5 +1,5 @@
 Avocado gives to you more than 40 python utility libraries (so far), that can
-be found under the :mod:`avocado.utils`. You can use these libraries to avoid
+be found under the :mod:`afutils`. You can use these libraries to avoid
 having to write necessary routines for your tests. These are very general in
 nature and can help you speed up your test development.
 

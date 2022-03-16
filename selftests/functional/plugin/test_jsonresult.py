@@ -1,7 +1,8 @@
 import json
 from os import path
 
-from avocado.utils import process
+from afutils import process
+
 from selftests.utils import AVOCADO, TestCaseTmpDir
 
 

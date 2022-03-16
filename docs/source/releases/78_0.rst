@@ -51,38 +51,38 @@ Users/Test Writers
 Bug Fixes
 =========
 
-* The :mod:`avocado.utils.asset` used to produce an empty string when
+* The :mod:`afutils.asset` used to produce an empty string when
   the asset name parameter was not a full URL, resulting in a broken
   hash value.
 
-* The :mod:`avocado.utils.asset` could fail trying to remove a
+* The :mod:`afutils.asset` could fail trying to remove a
   temporary file that may not ever have been created.
 
 Utility APIs
 ============
 
-* The CentOS provider of the :mod:`avocado.utils.vmimage` module now
+* The CentOS provider of the :mod:`afutils.vmimage` module now
   supports the location and image file names for version 8.
 
-* The OpenSUSE provider of the :mod:`avocado.utils.vmimage` module now
+* The OpenSUSE provider of the :mod:`afutils.vmimage` module now
   returns the pure version numbers, instead of the ones containing the
   ``Leap_`` prefixes.
 
-* The Debian provider of the the :mod:`avocado.utils.vmimage` module now
+* The Debian provider of the the :mod:`afutils.vmimage` module now
   properly matches the version numbers.
 
-* The Ubuntu provider of the the :mod:`avocado.utils.vmimage` module
+* The Ubuntu provider of the the :mod:`afutils.vmimage` module
   now doesn't attempt to convert versions into numbers, which could
   result in lost digits (10.40 would become 10.4).
 
-* The :mod:`avocado.utils.network.interfaces` module now supports
+* The :mod:`afutils.network.interfaces` module now supports
   different types output produced by ``iproute``.
 
-* The :meth:`avocado.utils.ssh.Session.cmd` method now allows users to
+* The :meth:`afutils.ssh.Session.cmd` method now allows users to
   ignore the exit status of the command with the ``ignore_status``
   parameter.
 
-* The :mod:`avocado.utils.cpu` changed how it identifies CPU vendors,
+* The :mod:`afutils.cpu` changed how it identifies CPU vendors,
   architectures and families, making those more consistent across the
   board.
 
@@ -95,7 +95,7 @@ Internal Changes
 
 * A "release job" was introduced to be run in addition to the other
   selftests before a release is cut.  It currently includes a complete
-  coverage of all the `:mod:`avocado.utils.vmimage` providers,
+  coverage of all the `:mod:`afutils.vmimage` providers,
   amounting to almost 200 test variations.
 
 * The ``loader_yaml`` and ``html`` plugins were migrated to the new

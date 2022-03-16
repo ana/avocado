@@ -1,6 +1,7 @@
+from afutils.process import run
+from afutils.software_manager.manager import SoftwareManager
+
 from avocado import Test
-from avocado.utils.process import run
-from avocado.utils.software_manager.manager import SoftwareManager
 
 
 class CancelTest(Test):

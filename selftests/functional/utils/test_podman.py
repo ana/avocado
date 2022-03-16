@@ -1,7 +1,8 @@
 import asyncio
 
+from afutils.podman import Podman
+
 from avocado import Test
-from avocado.utils.podman import Podman
 
 
 class PodmanTest(Test):

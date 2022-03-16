@@ -2,8 +2,9 @@ import os
 import tempfile
 import unittest
 
+from afutils import sysinfo as sysinfo_collectible
+
 from avocado.core import sysinfo
-from avocado.utils import sysinfo as sysinfo_collectible
 from selftests.utils import temp_dir_prefix
 
 

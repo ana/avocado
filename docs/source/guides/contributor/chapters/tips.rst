@@ -4,7 +4,7 @@ Avocado development tips
 In tree utils
 -------------
 
-You can find handy utils in `avocado.utils.debug`:
+You can find handy utils in `afutils.debug`:
 
 measure_duration
 ----------------
@@ -15,7 +15,7 @@ when optimizing.
 
 Usage::
 
-    from avocado.utils import debug
+    from afutils import debug
     ...
     @debug.measure_duration
     def your_function(...):

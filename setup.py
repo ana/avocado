@@ -321,7 +321,7 @@ if __name__ == '__main__':
                   'avocado-runner-asset = avocado.core.runners.requirement_asset:main',
                   'avocado-runner-package = avocado.core.runners.requirement_package:main',
                   'avocado-runner-sysinfo = avocado.core.runners.sysinfo:main',
-                  'avocado-software-manager = avocado.utils.software_manager.main:main',
+                  'avocado-software-manager = afutils.software_manager.main:main',
                   'avocado-external-runner = scripts.external_runner:main',
                   ],
               "avocado.plugins.init": [

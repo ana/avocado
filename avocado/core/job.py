@@ -29,6 +29,9 @@ import traceback
 import warnings
 from copy import deepcopy
 
+from afutils import astring
+from afutils.data_structures import CallbackRegister, time_to_seconds
+
 from avocado.core import (data_dir, dispatcher, exceptions, exit_codes,
                           jobdata, output, result, version)
 from avocado.core.job_id import create_unique_job_id
@@ -36,8 +39,6 @@ from avocado.core.output import LOG_JOB, LOG_UI, STD_OUTPUT
 from avocado.core.settings import settings
 from avocado.core.suite import TestSuite, TestSuiteError
 from avocado.core.utils.version import get_avocado_git_version
-from avocado.utils import astring
-from avocado.utils.data_structures import CallbackRegister, time_to_seconds
 
 _NEW_ISSUE_LINK = 'https://github.com/avocado-framework/avocado/issues/new'
 

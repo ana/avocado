@@ -14,7 +14,7 @@ roughly categorized into major topics and intended audience:
 Users/Test Writers
 ==================
 
-* Users of :mod:`avocado.utils.linux_modules` functions will find that
+* Users of :mod:`afutils.linux_modules` functions will find that
   a richer set of information is provided in their return values.  It
   now includes module name, size, submodules if present, filename,
   version, number of modules using it, list of modules it is dependent

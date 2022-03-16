@@ -45,7 +45,7 @@ Users/Test Writers
 
 * Avocado will log a warning, making it clear that it can not check
   the integrity of a requested asset when no hash is given.  This is
-  related to users of the :mod:`avocado.utils.asset` module or
+  related to users of the :mod:`afutils.asset` module or
   :meth:`avocado.Test.fetch_asset` utility method.
 
 * Avocado's cache directory defined in the configuration will now have
@@ -75,7 +75,7 @@ Internal Changes
   task has its category set to ``test`` (the default) it will be
   accounted for in the test results.
 
-* :mod:`avocado.utils.process` now uses :func:`time.monotonic` to
+* :mod:`afutils.process` now uses :func:`time.monotonic` to
   handle timeouts, which is better suited for the task and will
   survive clock updates.
 

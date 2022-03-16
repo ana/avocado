@@ -21,10 +21,11 @@ import os
 import signal
 import time
 
+from afutils import wait
+
 from avocado.core import exceptions
 from avocado.core.output import LOG_JOB as TEST_LOG
 from avocado.core.settings import settings
-from avocado.utils import wait
 
 
 def add_runner_failure(test_state, new_status, message):

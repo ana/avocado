@@ -16,14 +16,15 @@
 import logging
 import sys
 
+from afutils.asset import Asset
+
 from avocado.core.settings import settings
 from avocado.core.version import VERSION
-from avocado.utils.asset import Asset
 
 CACHE_DIRS = settings.as_dict().get('datadir.paths.cache_dirs')
 
 # Avocado asset lib already has its logger. Let's use it.
-LOG = logging.getLogger('avocado.utils.asset')
+LOG = logging.getLogger('afutils.asset')
 
 
 def configure_logging_settings():

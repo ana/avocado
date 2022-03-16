@@ -14,9 +14,10 @@
 
 """Result Archive Plugin"""
 
+from afutils import archive
+
 from avocado.core.plugin_interfaces import CLI, Result
 from avocado.core.settings import settings
-from avocado.utils import archive
 
 
 class Archive(Result):

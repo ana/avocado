@@ -2,9 +2,10 @@ import glob
 import os
 import unittest
 
+from afutils import process
+
 from avocado.core import exit_codes, job_id
 from avocado.core.settings import settings
-from avocado.utils import process
 from selftests.utils import AVOCADO, BASEDIR
 
 

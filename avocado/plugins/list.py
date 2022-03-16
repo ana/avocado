@@ -16,13 +16,14 @@
 import json
 import os
 
+from afutils.astring import iter_tabular_output
+
 from avocado.core import exit_codes, parser_common_args
 from avocado.core.output import LOG_UI, TERM_SUPPORT
 from avocado.core.plugin_interfaces import CLICmd
 from avocado.core.resolver import ReferenceResolutionResult
 from avocado.core.settings import settings
 from avocado.core.suite import TestSuite
-from avocado.utils.astring import iter_tabular_output
 
 
 def _get_tags_as_string(tags):

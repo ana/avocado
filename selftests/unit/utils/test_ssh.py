@@ -1,7 +1,7 @@
 import os
 import unittest.mock
 
-from avocado.utils import process, ssh
+from afutils import process, ssh
 
 
 class Session(unittest.TestCase):
@@ -55,7 +55,7 @@ class Session(unittest.TestCase):
 
     def test_no_ssh_client_binary(self):
         session = ssh.Session('hostname')
-        with unittest.mock.patch('avocado.utils.ssh.SSH_CLIENT_BINARY', None):
+        with unittest.mock.patch('afutils.ssh.SSH_CLIENT_BINARY', None):
             self.assertFalse(session.connect())
 
 

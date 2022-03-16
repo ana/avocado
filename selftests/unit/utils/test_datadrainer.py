@@ -2,7 +2,7 @@ import io
 import socket
 import unittest
 
-from avocado.utils import datadrainer
+from afutils import datadrainer
 
 
 class Base(unittest.TestCase):

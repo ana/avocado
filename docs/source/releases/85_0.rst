@@ -25,15 +25,15 @@ Users/Test Writers
 Utility APIs
 ============
 
-* The :mod:`avocado.utils.cloudinit` module will give a better error
+* The :mod:`afutils.cloudinit` module will give a better error
   message when the system is not capable of creating ISO images, with
   a solution for resolution.
 
-* The :mod:`avocado.utils.vmimage` can now access both current and
+* The :mod:`afutils.vmimage` can now access both current and
   non-current Fedora versions (which are hosted at different
   locations).
 
-* The :mod:`avocado.utils.network.interfaces` now supports setting
+* The :mod:`afutils.network.interfaces` now supports setting
   configuration for SuSE based systems.
 
 Internal Changes

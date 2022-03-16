@@ -19,8 +19,8 @@ Users/Test Writers
   at the end of job execution.  Please refer to
   :ref:`results-upload-plugin` for more information.
 
-* The :mod:`avocado.utils.cpu` functions, such as
-  :func:`avocado.utils.cpu.cpu_oneline_list` now support the S390X
+* The :mod:`afutils.cpu` functions, such as
+  :func:`afutils.cpu.cpu_oneline_list` now support the S390X
   architecture.
 
 * The ``default_parameters`` mechanism for setting default parameters
@@ -46,7 +46,7 @@ Users/Test Writers
 Bug Fixes
 =========
 
-* The :func:`avocado.utils.crypto.hash_file` function received fixes
+* The :func:`afutils.crypto.hash_file` function received fixes
   for a bug caused by a badly indented block.
 
 * The :ref:`golang-plugin` now won't report a test as found if the GO
@@ -58,7 +58,7 @@ Bug Fixes
 * The subtests filter, that can be added to test references, was fixed
   and now works properly when added to directories and SIMPLE tests.
 
-* The :class:`avocado.utils.process.FDDrainer` now properly flushes its
+* The :class:`afutils.process.FDDrainer` now properly flushes its
   contents and the once ocurring data loss (last line read) is now
   fixed.
 
@@ -74,7 +74,7 @@ Internal Changes
   variants and/or multiplexer related code.
 
 * The ``sysinfo`` feature implementation received a code clean up and
-  now relies on the common :mod:`avocado.utils.process` code, to run the
+  now relies on the common :mod:`afutils.process` code, to run the
   commands that will be collected, instead of having its own custom code
   for handling with output, timeouts, etc.
 

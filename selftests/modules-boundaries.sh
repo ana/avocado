@@ -14,9 +14,9 @@ fi
 unset LIST
 unset COUNT
 
-echo -n "* Checking for avocado imports from avocado/utils: "
-LIST=`git grep -E '^(import avocado\\.*|from avocado(.*)import)' avocado/utils | grep -v 'avocado\.utils'`
-COUNT=`git grep -E '^(import avocado\\.*|from avocado(.*)import)' avocado/utils | grep -v 'avocado\.utils' | wc -l`
+echo -n "* Checking for avocado imports from afutils: "
+LIST=`git grep -E '^(import avocado\\.*|from avocado(.*)import)' afutils | grep -v 'avocado\.utils'`
+COUNT=`git grep -E '^(import avocado\\.*|from avocado(.*)import)' afutils | grep -v 'avocado\.utils' | wc -l`
 (( RESULT = RESULT + COUNT ))
 echo "$COUNT"
 if [ -n "$LIST" ]; then

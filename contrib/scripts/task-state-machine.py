@@ -3,7 +3,7 @@ import itertools
 import random
 import time
 
-from avocado.utils.astring import tabular_output
+from afutils.astring import tabular_output
 
 DEBUG = False
 
